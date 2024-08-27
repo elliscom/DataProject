@@ -1,0 +1,75 @@
+Hello and Welcome to my Entrepenurial Project. 
+
+To run this application, please read the following steps: 
+
+Note: Please do NOT run this application on the following dates. This is because the API is updating, and data cannot be returned.
+
+Saturday 11th May 11am-2pm
+Tuesday 14th May 6:30pm-9:30pm
+Sunday 19th May 2:30pm - 
+
+
+I am unsure what happens to this API after the 19th May. Typically it is removed for the new season.
+This means the application will not showcase its full functionality from the 19th May - September 2024, due to it aligning with the premier league season.
+
+
+Steps: 
+
+1) Save the file to your computer. 
+This has been tested thoroughly through the windows operating system. 
+This might take a while due to the shear amount of files. So bare with the download, sorry! 
+
+2) Open the command prompt on your computer. 
+
+3) Type the following in the command prompt, in order. 
+
+- cd C:\Users\ellis\OneDrive\Desktop\fpl_app
+
+(Of course, this will depend on the route to your saved file).
+(In this case, I have saved it to my one drive desktop)
+(Please also ensure the file is named fpl_app when you have extracted the zip, and all the routes are correct)
+(ie. file path = fpl_app > templates > menu.html. The file names should have no extra routes)
+
+- venv\Scripts\activate
+
+- python app.py
+
+- Run the executable on http://127.0.0.1:5000 on your browser. For maximum compatibility, use Google Chrome. 
+
+If you get errors, please ensure the following libraries are installed:
+
+from flask import Flask, render_template, request, redirect, url_for, session, flash
+import requests
+import numpy as np
+import pandas as pd
+import joblib 
+import os
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+If you need a passkey, please use the following: app.secret_key = 'temp'.
+
+This should effectively run the application!
+(If you have any issues, please feel free to email me. 
+
+Files included:
+
+fpl_app > static, templates, venv, app.py, train_model.py > player_model.
+
+static > final_datasets, img, modeldata, experts2.css, KOTGW.css, login.css, menu.css, myai.css, statsstyle.css.
+
+templates > base.html, experts.html, index.html, KOTGW.html, login.html, menu.html, myai.html. stats.html.
+
+Each of the files listed above should have adequate files installed inside. 
+
+All commits are listed under the 'snippets' section of gitlab. 
+
+Enjoy!
+
+- Ellis. 
+
+
+
+
+

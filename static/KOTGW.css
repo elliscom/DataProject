@@ -1,0 +1,753 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+
+
+
+ .purple-box {
+    width: calc(100% - 80px);
+    height: 60px;
+    background: rgb(0,207,255);
+    background: linear-gradient(90deg, rgba(0,207,255,1), rgba(255,0,112,1));
+    position: absolute;
+    top: 0;
+    left: 80px; 
+    z-index: -1001;
+    box-shadow: 0px 4px 8px 0px rgba(255, 255, 255, 1); 
+ }
+
+ .purple-box span {
+    color: white;  
+    position: absolute;   
+    top: 10px;        
+    right: 20px;        
+    font-size: 1.7rem;  
+    font-weight: bold;   
+}
+
+.white-box {
+    width: calc(100% - 90px);
+    height: 500px; 
+    background: transparent; 
+    position: absolute;
+    top: 60px; 
+    left: 80px; 
+    z-index: 10;
+    padding: 5px;
+    margin-top: 20px;
+    margin-left: 5px;
+    display: flex;
+}
+
+.leftcontent, .rightcontent {
+    flex: 1;
+    height: 100%;
+}
+
+
+.leftcontent {
+    display: flex;
+    flex-direction: column;
+}
+
+.leftcontent > div {
+    flex: 1;
+}
+
+.rightcontent {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+
+.rightcontent > div:last-child {
+    border-bottom: none
+}
+
+.rightcontent > div:nth-child(1) {
+    height: 25%;
+}
+
+.rightcontent > div:nth-child(2) {
+    height: 50%;
+}
+
+.rightcontent > div:nth-child(3) {
+    height: 25%;
+}
+
+.statscontent {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: repeat(6, 1fr); 
+    gap: 10px; 
+    height: 100%;
+    width: 90%; 
+    color: white;
+    align-content: center;
+    margin-left: 20px;
+}
+
+.teamcontent{
+    display: flex;
+    flex-direction: row;   
+}
+
+.teamcontent > div:nth-child(1) {
+    margin-left: 100px;
+}
+
+.progbar{
+    border: 2px solid white;
+    background: linear-gradient(90deg, rgba(0,207,255,1), rgba(255,0,112,1));
+}
+
+.progbar2{
+    border: 2px solid white;
+    background: linear-gradient(90deg, 
+              rgba(0,207,255,1) 0%, 
+              rgba(255,0,112,1) 90%, 
+              white 90%, 
+              white 91%, 
+              black 91%);
+}
+
+.progbar3{
+    border: 2px solid white;
+    background: linear-gradient(90deg, 
+              rgba(0,207,255,1) 0%, 
+              rgba(255,0,112,1) 80%, 
+              white 80%, 
+              white 81%, 
+              black 81%);
+}
+
+.progbar4{
+    border: 2px solid white;
+    background: linear-gradient(90deg, 
+              rgba(0,207,255,1) 0%, 
+              rgba(255,0,112,1) 70%, 
+              white 70%, 
+              white 71%, 
+              black 71%);
+}
+
+.progbar5 {
+    border: 2px solid white;
+    background: linear-gradient(90deg, 
+              rgba(0,207,255,1) 0%, 
+              rgba(255,0,112,1) 60%, 
+              white 60%, 
+              white 61%, 
+              black 61%);
+}
+
+.progbar6 {
+    border: 2px solid white;
+    background: linear-gradient(90deg, 
+              rgba(0,207,255,1) 0%, 
+              rgba(255,0,112,1) 50%, 
+              white 50%, 
+              white 51%, 
+              black 51%);
+}
+
+.progbar7 {
+    border: 2px solid white;
+    background: linear-gradient(90deg, 
+              rgba(0,207,255,1) 0%, 
+              rgba(255,0,112,1) 40%, 
+              white 40%, 
+              white 41%, 
+              black 41%);
+}
+
+.progbar8 {
+    border: 2px solid white;
+    background: linear-gradient(90deg, 
+              rgba(0,207,255,1) 0%, 
+              rgba(255,0,112,1) 30%, 
+              white 30%, 
+              white 31%, 
+              black 31%);
+}
+
+.progbar9 {
+    border: 2px solid white;
+    background: linear-gradient(90deg, 
+              rgba(0,207,255,1) 0%, 
+              rgba(255,0,112,1) 20%, 
+              white 20%, 
+              white 21%, 
+              black 21%);
+}
+
+.teamtext1{
+    margin-top: 45px;
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: -5px;
+}
+
+.teamtext2{
+    color: white;
+    font-size: 2.1rem;
+    font-weight: 400;
+}
+
+.rankclassedit{
+    font-style: italic;
+    color: aqua;
+    margin-top: 2px;
+    font-size: 0.95rem;
+}
+
+.teamtext3{
+    color:aqua;
+    font-weight: 700 !important;
+}
+
+.teamtext33{
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: white;
+    font-style: italic;
+}
+
+.colourrank{
+    color:rgb(245, 177, 207);
+}
+
+.marginedrank{
+    margin-top: 10px;
+    margin-left: -5px;
+}
+
+.ranktitles{
+    margin-bottom: -40px;
+    font-size: 1.05rem;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.scaledbadge{
+    height: 180px;
+    width: 180px;
+    margin-top: 2px;
+    margin-left: 150px;
+}
+
+.scaled2badge{
+    height: 25px;
+    width: 25px;
+    margin-left: 5px;
+    margin-bottom: -5px !important;
+}
+
+.scaledbadge3{
+    height: 40px;
+    width: 40px;
+}
+
+
+/* the follow code is credit to https://www.youtube.com/@CodeInfoofficial */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+:root{
+    --clr: black;
+}
+body{
+    min-height: 100vh;
+    background: var(--clr);
+}
+.sidebar{
+    position: fixed;  
+    width: 80px;
+    height: 100vh;
+    background: white;
+    transition: 0.5s;
+    padding-left: 10px;
+    overflow: hidden;
+    top: 0;  
+    left: 0;  
+}
+
+.sidebar.active{
+    width:230px;
+}
+
+.sidebar ul{
+    position:relative;
+    height:100vh;
+}
+
+.sidebar ul li{
+    position: relative;
+    list-style: none;
+
+}
+
+.sidebar ul li.active{
+    background: var(--clr);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.sidebar ul li.active::before{
+    content:'';
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px 0 5px var(--clr);
+    background: transparent;
+}
+
+.sidebar ul li.active::after{
+    content:'';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 5px -5px 0 5px var(--clr);
+    background: transparent;
+}
+
+.sidebar ul li.logo
+{
+    margin-bottom: 50px;
+}
+
+.sidebar ul li.logo .icon {
+    font-size: 2em;
+    color: var(--clr);
+}
+
+.sidebar ul li.logo .text {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--clr);
+}
+
+.sidebar ul li a{
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+
+}
+
+.sidebar ul li a .icon{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    padding-left: 10px;
+    height: 70px;
+    font-size: 1.5em;
+    color:rgb(9, 1, 19);
+    transition: 0.5s;
+}
+
+.sidebar ul li a .text{
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items:center;
+    font-size: 1em;
+    color:rgb(7, 10, 62);
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    transition: 0.5px;
+    font-weight: bold;
+}
+
+.sidebar ul li.active a .icon{
+    color: #fff;
+}
+
+.sidebar ul li.active a .text{
+    color: var(--bg);
+}
+
+.sidebar ul li:hover a .icon,
+.sidebar ul li:hover a .text
+{
+    color: var(--bg);
+}
+
+.sidebar ul li.active a .icon:before{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    width: 60px;
+    background: var(--bg);
+    border-radius: 50%;
+    transition:0.5s;
+}
+
+.sidebar ul li:hover.active a .icon:before{
+    background: #fff;
+}
+
+.last{
+    position: absolute;
+    bottom: 0;
+    width:100%;
+}
+
+.IBOX
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.IBOX img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 170%;
+    object-fit: cover;
+}
+
+ .TOGGLEMENU{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgb(3, 13, 29);
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .TOGGLEMENU::before{
+    content: '';
+    position:absolute;
+    width: 20px;
+    height:3px;
+    background: #fff;
+    transform: translateY(-9px);
+    transition: 0.5s;
+    box-shadow: 0 9px 0 #fff;
+ }
+
+ .TOGGLEMENU::after{
+    content: '';
+    position:absolute;
+    width: 20px;
+    height:3px;
+    background: #fff;
+    transform: translateY(9px);
+    transition: 0.5s;
+ }
+
+ .TOGGLEMENU.active::before{
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+ }
+
+ .TOGGLEMENU.active::after{
+    transform: translateY(0px) rotate(-45deg);
+    box-shadow: 0 0 0 #fff;
+ }
+
+ /* end of credit */
+
+.white-box2 {
+    width: calc(100% - 90px);
+    height: 200px; 
+    background: transparent; 
+    position: absolute;
+    top: 60px; 
+    left: 80px; 
+    z-index: 10;
+    padding: 5px;
+    margin-top: 550px;
+    margin-left: 5px;
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 5px; 
+    margin-left: 10px !important;
+}
+
+.white-box2 > div {
+    background-color: transparent; 
+    height: 100%;
+}
+
+.white-box2 > div:nth-child(1) {
+    margin-left: 40px !important;
+}
+
+.white-box2 > div:nth-child(2) {
+    margin-left: 30px !important;
+}
+
+.white-box2 > div:nth-child(5) {
+    margin-left: -150px !important;
+}
+
+.scaledbadge2{
+    height: 180px;
+    width: 180px;
+}
+
+.scaledimg2{
+    height:65px;
+    width:65px;
+    margin-top: 65px;
+    margin-left: 70px;
+}
+
+.container {
+    flex-grow: 1; 
+    padding-left: 0px; 
+}
+
+.page-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding-left: 80px;
+}
+
+.FPLplayerWrapper3 {
+    width: calc(100% - 60px);
+    margin-left: 32px;
+    padding: 4px;
+    background: linear-gradient(90deg, rgba(0,207,255,1), rgba(255,0,112,1));
+    border-radius: 4px;
+    margin-top: 90px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.FPLplayer3 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background-color: rgb(4, 3, 28);
+    padding: 25px;
+    box-sizing: border-box;
+    height: 460px;
+}
+
+.predicted_teams {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important; 
+    width: 100%;
+    background-color: black;
+    box-sizing: border-box;
+    height: 10px;
+    margin-right: 50px;
+    margin-top: 240px;
+}
+
+.boxxymerchant {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 20px;
+    margin-right: 50px;
+    margin-top: 20px;
+}
+
+
+.predicted_teams2 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background-color: rgb(4, 3, 28);
+    padding: 25px;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.predicted_teams2 div { 
+    position: relative;
+}
+
+.left_team, .right_team {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.left_team {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+}
+
+.grid_item {
+    background-color: transparent;
+    position: relative;
+}
+
+.grid_item img {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    transform: translateY(-50%); 
+    max-height: 100%;
+    max-width: 40px;
+    width: auto; 
+}
+
+.right_team {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    color: white; 
+    margin-top: 100px;
+    background: transparent !important;
+}
+
+.grid_item_text {
+    display: block;
+    padding-top: 15px; 
+    height: 100%; 
+    text-align: left;
+    line-height: normal;
+    color: white;
+    font-style: bold;
+    margin-left: 10px;
+    left: -20%;
+}
+
+.imageholder{
+    height: 300px;
+    background-color: black;
+    align-items: center !important;
+}
+
+.FPLplayerWrapperIMG {
+    width: calc(100% - 60px);
+    margin-left: 32px;
+    padding: 4px;
+    background: transparent;
+    border-radius: 4px;
+    margin-top: -80px !important;
+    box-sizing: border-box;
+    margin-bottom: 80px;
+}
+
+.FPLplayerWrapperIMG2 {
+    width: calc(100% - 60px);
+    padding: 4px;
+    background: linear-gradient(90deg, rgba(0,207,255,1), rgba(255,0,112,1));
+    border-radius: 4px;
+    margin-top: 40px;
+    box-sizing: border-box;
+    margin-left: 32px;
+}
+
+.predscaler{
+    max-width: 140%;
+    max-height: auto;
+}
+
+.FPLteam {
+    position: fixed;
+    margin-left: 23px;
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr ; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px;
+    width: 26%;
+    height: 520px;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    border: 3px solid rgb(253, 251, 251);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.preddas {
+    width: calc(100% - 60px);
+    padding: 4px;
+    background: linear-gradient(90deg, rgba(0,207,255,1), rgba(255,0,112,1));
+    border-radius: 4px;
+    margin-top: 40px;
+    box-sizing: border-box;
+    margin-left: 32px;
+}
+
+.insidepreddas {
+    display: flex;
+    justify-content: flex-start; 
+    max-width: 100%;
+    background-color: rgb(4, 3, 28);
+    padding: 25px;
+    box-sizing: border-box;
+    height: 100px;
+    color: white;
+}
+
+.insidepreddas div{
+    margin-top: -35px !important;
+}
+
+.predscaler50{
+    max-width: 60%;
+    height: auto;
+}
+
+.players5{
+    font-size: 1.55rem;
+    font-style: bolder;
+    position: relative;
+    bottom: 50px;
+}
+
+.players6{
+    font-size: 1.7rem;
+    font-style: bolder;
+    position: relative;
+    bottom: 50px;
+    right: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+

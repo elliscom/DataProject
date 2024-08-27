@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+  <title>LOGIN</title>
+</head>
+<body>
+    <section>
+        <div class="firstbox">
+            <div class="secondbox">
+
+                <form action="/players" method="post">
+                    <h2>Login</h2>
+                    <div class="BOX-PUT">
+                        <ion-icon name="football-outline"></ion-icon>
+                        <input type="text" name="fpl_id" required>
+                        <label for="">Enter FPL ID Number</label>
+                    </div>
+                    <div class="forget">
+                        <label><input type="checkbox"> Remember Me</label>
+                    </div>
+                    <button type="submit">Log in</button>
+                    <div class="register">
+                        <p>What is my <a href="https://fpl.team/find-id" target="_blank">FPL ID</a>?</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
+<!-- the above code was followed off a youtube tutorial by @codehal on youtube. -->

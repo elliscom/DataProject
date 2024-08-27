@@ -1,0 +1,1737 @@
+{% extends 'base.html' %}
+
+{% block title %}Experts{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='statsstyle.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="purple-box">
+        <span>Data-Driven</span>
+    </div>
+    <div class="FPLplayerWrapper3">
+        <div class="FPLplayer3">
+            <div><img src="{{ url_for('static', filename='img/Picture42.png') }}" alt="Player Image" class="whack"></div>
+        </div>
+    </div>
+        <div class="FPLplayerWrapper2">
+            <div class="FPLplayer2">
+                <div class="FPLteam">
+                    {% set user_players = teams_data['TOTALpoints'] %}
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[0]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[0]['name'] }}</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[0]['total_points'] }}</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[1]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>              
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[1]['name'] }}</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[1]['total_points'] }}</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2]['name'] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[2]['total_points'] }}</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3]['name'] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[3]['total_points'] }}</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4]['name'] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[4]['total_points'] }}</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                              
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5]['name'] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[5]['total_points'] }}</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6]['name'] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[6]['total_points'] }}</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7]['name'] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[7]['total_points'] }}</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8]['name'] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[8]['total_points'] }}</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9]['name'] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[9]['total_points'] }}</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10]['name'] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[10]['total_points'] }}</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11]['name'] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[11]['total_points'] }}</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12]['name'] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[12]['total_points'] }}</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13]['name'] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[13]['total_points'] }}</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14]['name'] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[14]['total_points'] }}</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="teamtext1"><span class="teamtextcolour">Highest</span> Points.</div>
+                    <div class="teamtext2">Interested in securing the most <span class="greentext">consistent</span> players? Here are the <span class="greentext">highest</span> performing players, who've racked up the most <span class="greentext">points</span> throughout the season!</div>
+                    <div class="teamtext3"><span class="greentext">Target</span> Players:</div>
+                    <div class="topplays">
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ TOPHIGH1['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/1medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ SECHIGH1['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/2medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ THIRDHIGH1['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/3medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div class="marginlit">{{ TOPHIGH1['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ SECHIGH1['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ THIRDHIGH1['name'] }}</div>
+                        <div></div>
+                        <div><span class="bluertext">{{ TOPHIGH1['total_points'] }}<span class="whitertext">pts</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ SECHIGH1['total_points'] }}<span class="whitertext">pts</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ THIRDHIGH1['total_points'] }}<span class="whitertext">pts</span></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="FPLplayerWrapper2">
+            <div class="FPLplayer2">
+                <div class="FPLteam">
+                    {% set user_players = teams_data['highest_owned_players'] %}
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[0]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[0]['name'] }}</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix">{{ user_players[0]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[1]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>              
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[1]['name'] }}</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix">{{ user_players[1]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2]['name'] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix">{{ user_players[2]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3]['name'] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix">{{ user_players[3]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4]['name'] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix">{{ user_players[4]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                              
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5]['name'] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix">{{ user_players[5]['selected_by_percent'] }}%</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6]['name'] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix">{{ user_players[6]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7]['name'] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix">{{ user_players[7]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8]['name'] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix">{{ user_players[8]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9]['name'] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix">{{ user_players[9]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10]['name'] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix">{{ user_players[10]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11]['name'] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix">{{ user_players[11]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12]['name'] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix">{{ user_players[12]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13]['name'] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix">{{ user_players[13]['selected_by_percent'] }}%</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14]['name'] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix">{{ user_players[14]['selected_by_percent'] }}%</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="teamtext1"><span class="teamtextcolour">Highest</span> Owned.</div>
+                    <div class="teamtext2">Prefer to follow the<span class="greentext"> crowd</span>? Here are the highest<span class="greentext"> owned</span> players in FPL, perfect for protecting your lead at the<span class="greentext"> top</span> of your mini-league!</div>
+                    <div class="teamtext3"><span class="greentext">Target</span> Players:</div>
+                    <div class="topplays">
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ TOPHIGH2['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/1medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ SECHIGH2['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/2medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ THIRDHIGH2['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/3medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div class="marginlit">{{ TOPHIGH2['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ SECHIGH2['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ THIRDHIGH2['name'] }}</div>
+                        <div></div>
+                        <div><span class="bluertext">{{ TOPHIGH2['selected_by_percent'] }}<span class="whitertext">%</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ SECHIGH2['selected_by_percent'] }}<span class="whitertext">%</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ THIRDHIGH2['selected_by_percent'] }}<span class="whitertext">%</span></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="FPLplayerWrapper2">
+            <div class="FPLplayer2">
+                <div class="FPLteam">
+                    {% set user_players = teams_data['transfers_in_players'] %}
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[0]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[0]['name'] }}</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix2">{{ user_players[0]['net_transfers'] }}</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[1]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>              
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[1]['name'] }}</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix2">{{ user_players[1]['net_transfers'] }}</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2]['name'] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix2">{{ user_players[2]['net_transfers'] }}</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3]['name'] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix2">{{ user_players[3]['net_transfers'] }}</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4]['name'] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix2">{{ user_players[4]['net_transfers'] }}</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                              
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5]['name'] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix2">{{ user_players[5]['net_transfers'] }}</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6]['name'] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix2">{{ user_players[6]['net_transfers'] }}</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7]['name'] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix2">{{ user_players[7]['net_transfers'] }}</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8]['name'] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix2">{{ user_players[8]['net_transfers'] }}</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9]['name'] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix2">{{ user_players[9]['net_transfers'] }}</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10]['name'] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix2">{{ user_players[10]['net_transfers'] }}</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11]['name'] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix2">{{ user_players[11]['net_transfers'] }}</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12]['name'] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix2">{{ user_players[12]['net_transfers'] }}</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13]['name'] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix2">{{ user_players[13]['net_transfers'] }}</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14]['name'] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix2">{{ user_players[14]['net_transfers'] }}</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="teamtext1">Net <span class="teamtextcolour">Transfers</span> IN.</div>
+                    <div class="teamtext2">Like to follow dynamic <span class="teamtextcolour">trends</span> in player selection? See the most <span class="teamtextcolour">frequently</span> selected players for their upcoming game, and see who's popular right <span class="teamtextcolour">now</span>!</div>
+                    <div class="teamtext3"><span class="greentext">Target</span> Players:</div>
+                    <div class="topplays">
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ TOPHIGH3['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/1medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ SECHIGH3['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/2medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ THIRDHIGH3['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/3medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div class="marginlit">{{ TOPHIGH3['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ SECHIGH3['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ THIRDHIGH3['name'] }}</div>
+                        <div></div>
+                        <div><span class="whitertext">+</span><span class="bluertext">{{ TOPHIGH3['net_transfers'] }}</span></div>
+                        <div></div>
+                        <div><span class="whitertext">+</span><span class="bluertext">{{ SECHIGH3['net_transfers'] }}</span></div>
+                        <div></div>
+                        <div><span class="whitertext">+</span><span class="bluertext">{{ THIRDHIGH3['net_transfers'] }}</span></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="FPLplayerWrapper2">
+            <div class="FPLplayer2">
+                <div class="FPLteam">
+                    {% set user_players = teams_data['playersbyform'] %}
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[0]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[0]['name'] }}</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[0]['form'] }}</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[1]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>              
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[1]['name'] }}</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[1]['form'] }}</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2]['name'] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[2]['form'] }}</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3]['name'] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[3]['form'] }}</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4]['name'] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[4]['form'] }}</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                              
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5]['name'] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[5]['form'] }}</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6]['name'] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[6]['form'] }}</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7]['name'] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[7]['form'] }}</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8]['name'] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[8]['form'] }}</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9]['name'] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[9]['form'] }}</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10]['name'] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[10]['form'] }}</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11]['name'] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[11]['form'] }}</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12]['name'] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[12]['form'] }}</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13]['name'] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[13]['form'] }}</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14]['name'] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[14]['form'] }}</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="teamtext1">Player <span class="teamtextcolour">Form</span>.</div>
+                    <div class="teamtext2">Seeking <span class="teamtextcolour">standouts</span> in recent performances? See the most in <span class="teamtextcolour"> form </span>players. These are the<span class="teamtextcolour"> best</span> assets to buy <span class="teamtextcolour">NOW</span>!</div>
+                    <div class="teamtext3"><span class="greentext">Target</span> Players:</div>
+                    <div class="topplays">
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ TOPHIGH4['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/1medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ SECHIGH4['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/2medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ THIRDHIGH4['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/3medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div class="marginlit">{{ TOPHIGH4['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ SECHIGH4['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ THIRDHIGH4['name'] }}</div>
+                        <div></div>
+                        <div><span class="bluertext">{{ TOPHIGH4['form'] }}</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ SECHIGH4['form'] }}</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ THIRDHIGH4['form'] }}</span></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="FPLplayerWrapper2">
+            <div class="FPLplayer2">
+                <div class="FPLteam">
+                    {% set user_players = teams_data['playergoals'] %}
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/nah.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">N/A</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix3">0</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/nah.png') }}" alt="Kit" class="scaled-down-image"></div>              
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">N/A</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix3">0</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2]['name'] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[2]['goals_scored'] }}</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3]['name'] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[3]['goals_scored'] }}</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4]['name'] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[4]['goals_scored'] }}</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                              
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5]['name'] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[5]['goals_scored'] }}</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6]['name'] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[6]['goals_scored'] }}</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7]['name'] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[7]['goals_scored'] }}</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8]['name'] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[8]['goals_scored'] }}</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9]['name'] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[9]['goals_scored'] }}</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10]['name'] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[10]['goals_scored'] }}</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11]['name'] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[11]['goals_scored'] }}</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12]['name'] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[12]['goals_scored'] }}</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13]['name'] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[13]['goals_scored'] }}</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14]['name'] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[14]['goals_scored'] }}</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="teamtext1"><span class="teamtextcolour">Goals</span> Scored.</div>
+                    <div class="teamtext2">Arguably the most important <span class="teamtextcolour">metric</span> in FPL. Here are the highest <span class="teamtextcolour">goal</span> scorers this season!</div>
+                    <div class="teamtext3"><span class="greentext">Target</span> Players:</div>
+                    <div class="topplays">
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ TOPHIGH5['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/1medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ SECHIGH5['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/2medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ THIRDHIGH5['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/3medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div class="marginlit">{{ TOPHIGH5['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ SECHIGH5['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ THIRDHIGH5['name'] }}</div>
+                        <div></div>
+                        <div><span class="bluertext">{{ TOPHIGH5['goals_scored'] }}</span><span class="whitertext">goals</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ SECHIGH5['goals_scored'] }}</span><span class="whitertext">goals</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ THIRDHIGH5['goals_scored'] }}</span><span class="whitertext">goals</span></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="FPLplayerWrapper2">
+            <div class="FPLplayer2">
+                <div class="FPLteam">
+                    {% set user_players = teams_data['expectedgoals'] %}
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[0]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[0]['name'] }}</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[0]['expected_goals'] }}</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/nah.png') }}" alt="Kit" class="scaled-down-image"></div>              
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">N/A</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix3">0</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2]['name'] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[2]['expected_goals'] }}</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3]['name'] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[3]['expected_goals'] }}</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4]['name'] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[4]['expected_goals'] }}</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                              
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5]['name'] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[5]['expected_goals'] }}</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6]['name'] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[6]['expected_goals'] }}</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7]['name'] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[7]['expected_goals'] }}</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8]['name'] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[8]['expected_goals'] }}</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9]['name'] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[9]['expected_goals'] }}</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10]['name'] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[10]['expected_goals'] }}</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11]['name'] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[11]['expected_goals'] }}</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12]['name'] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[12]['expected_goals'] }}</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13]['name'] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[13]['expected_goals'] }}</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14]['name'] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[14]['expected_goals'] }}</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="teamtext1"><span class="teamtextcolour">Expected</span> Goals.</div>
+                    <div class="teamtext2">Our favourite <span class="teamtextcolour">underlying</span> stat. xG measures the likelihood that a player will score a <span class="teamtextcolour">shot</span>, based on distance, angle, position and clarity. Fan of intrinsic data? Here are the players with the <span class="teamtextcolour">highest</span> xG value.</div>
+                    <div class="teamtext3"><span class="greentext">Target</span> Players:</div>
+                    <div class="topplays">
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ TOPHIGH6['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/1medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ SECHIGH6['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/2medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ THIRDHIGH6['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/3medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div class="marginlit">{{ TOPHIGH6['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ SECHIGH6['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ THIRDHIGH6['name'] }}</div>
+                        <div></div>
+                        <div><span class="bluertext">{{ TOPHIGH6['expected_goals'] }}</span><span class="whitertext">xG</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ SECHIGH6['expected_goals'] }}</span><span class="whitertext">xG</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ THIRDHIGH6['expected_goals'] }}</span><span class="whitertext">xG</span></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="FPLplayerWrapper2">
+            <div class="FPLplayer2">
+                <div class="FPLteam">
+                    {% set user_players = teams_data['assists'] %}
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[0]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[0]['name'] }}</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[0]['assists'] }}</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/nah.png') }}" alt="Kit" class="scaled-down-image"></div>              
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">N/A</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix3">0</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2]['name'] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[2]['assists'] }}</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3]['name'] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[3]['assists'] }}</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4]['name'] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[4]['assists'] }}</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                              
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5]['name'] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[5]['assists'] }}</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6]['name'] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[6]['assists'] }}</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7]['name'] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[7]['assists'] }}</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8]['name'] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[8]['assists'] }}</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9]['name'] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[9]['assists'] }}</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10]['name'] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[10]['assists'] }}</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11]['name'] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[11]['assists'] }}</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12]['name'] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[12]['assists'] }}</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13]['name'] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[13]['assists'] }}</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14]['name'] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[14]['assists'] }}</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="teamtext1"><span class="teamtextcolour">Assists</span>.</div>
+                    <div class="teamtext2">Another <span class="teamtextcolour">significant</span> metric. Interested in getting points from <span class="teamtextcolour">creative</span> players? Here are those with the most <span class="teamtextcolour">assists</span> throughout this season.</div>
+                    <div class="teamtext3"><span class="greentext">Target</span> Players:</div>
+                    <div class="topplays">
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ TOPHIGH7['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/1medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ SECHIGH7['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/2medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ THIRDHIGH7['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/3medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div class="marginlit">{{ TOPHIGH7['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ SECHIGH7['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ THIRDHIGH7['name'] }}</div>
+                        <div></div>
+                        <div><span class="bluertext">{{ TOPHIGH7['assists'] }}</span><span class="whitertext">assists</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ SECHIGH7['assists'] }}</span><span class="whitertext">assists</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ THIRDHIGH7['assists'] }}</span><span class="whitertext">assists</span></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="FPLplayerWrapper2">
+            <div class="FPLplayer2">
+                <div class="FPLteam">
+                    {% set user_players = teams_data['xgi'] %}
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[0]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[0]['name'] }}</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[0]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[1]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>              
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[1]['name'] }}</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[1]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2]['name'] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[2]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3]['name'] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[3]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4]['name'] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[4]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                              
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5]['name'] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[5]['expected_goal_involvements'] }}</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6]['name'] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[6]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7]['name'] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[7]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8]['name'] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[8]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9]['name'] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[9]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10]['name'] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[10]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11]['name'] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[11]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12]['name'] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[12]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13]['name'] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[13]['expected_goal_involvements'] }}</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14]['name'] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[14]['expected_goal_involvements'] }}</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="teamtext1"><span class="teamtextcolour">xGi</span>.</div>
+                    <div class="teamtext2">Expected <span class="teamtextcolour">goal</span> Index, combining expected <span class="teamtextcolour">goals</span> and <span class="teamtextcolour">assists</span> to create one data-driven metric. Another <span class="teamtextcolour">underlying</span> stat to drive your player selection.</div>
+                    <div class="teamtext3"><span class="greentext">Target</span> Players:</div>
+                    <div class="topplays">
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ TOPHIGH8['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/1medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ SECHIGH8['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/2medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ THIRDHIGH8['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/3medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div class="marginlit">{{ TOPHIGH8['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ SECHIGH8['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ THIRDHIGH8['name'] }}</div>
+                        <div></div>
+                        <div><span class="bluertext">{{ TOPHIGH8['expected_goal_involvements'] }}</span><span class="whitertext">xGi</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ SECHIGH8['expected_goal_involvements'] }}</span><span class="whitertext">xGi</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ THIRDHIGH8['expected_goal_involvements'] }}</span><span class="whitertext">xGi</span></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="FPLplayerWrapper2">
+            <div class="FPLplayer2">
+                <div class="FPLteam">
+                    {% set user_players = teams_data['ictindex'] %}
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[0]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[0]['name'] }}</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[0]['ict_index'] }}</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[1]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>              
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[1]['name'] }}</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[1]['ict_index'] }}</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2]['name'] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[2]['ict_index'] }}</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3]['name'] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[3]['ict_index'] }}</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4]['name'] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[4]['ict_index'] }}</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                              
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5]['name'] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[5]['ict_index'] }}</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6]['name'] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[6]['ict_index'] }}</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7]['name'] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[7]['ict_index'] }}</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8]['name'] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[8]['ict_index'] }}</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9]['name'] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[9]['ict_index'] }}</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10]['name'] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[10]['ict_index'] }}</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11]['name'] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[11]['ict_index'] }}</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12]['name'] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[12]['ict_index'] }}</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13]['name'] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[13]['ict_index'] }}</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14]['name'] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[14]['ict_index'] }}</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="teamtext1"><span class="teamtextcolour">ICT</span> Index.</div>
+                    <div class="teamtext2"><span class="teamtextcolour">Influence</span>, <span class="teamtextcolour">Creativity</span> and <span class="teamtextcolour">Threat</span>. A combined metric to determine the most infleuntial players, who are the <span class="teamtextcolour">drive</span> behind their team, making things happen.</div>
+                    <div class="teamtext3"><span class="greentext">Target</span> Players:</div>
+                    <div class="topplays">
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ TOPHIGH9['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/1medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ SECHIGH9['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/2medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ THIRDHIGH9['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/3medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div class="marginlit">{{ TOPHIGH9['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ SECHIGH9['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ THIRDHIGH9['name'] }}</div>
+                        <div></div>
+                        <div><span class="bluertext">{{ TOPHIGH9['ict_index'] }}</span><span class="whitertext"></span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ SECHIGH9['ict_index'] }}</span><span class="whitertext"></span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ THIRDHIGH9['ict_index'] }}</span><span class="whitertext"></span></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="FPLplayerWrapper2">
+            <div class="FPLplayer2">
+                <div class="FPLteam">
+                    {% set user_players = teams_data['valueseason'] %}
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[0]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[0]['name'] }}</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[0]['value_season'] }}</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[1]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>              
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[1]['name'] }}</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[1]['value_season'] }}</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2]['name'] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[2]['value_season'] }}</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3]['name'] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[3]['value_season'] }}</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4]['name'] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[4]['value_season'] }}</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                              
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5]['name'] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[5]['value_season'] }}</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6]['name'] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[6]['value_season'] }}</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7]['name'] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[7]['value_season'] }}</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8]['name'] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[8]['value_season'] }}</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9]['name'] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[9]['value_season'] }}</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10]['name'] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[10]['value_season'] }}</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11]['name'] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[11]['value_season'] }}</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12]['name'] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[12]['value_season'] }}</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13]['name'] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[13]['value_season'] }}</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14]['name'] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[14]['value_season'] }}</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="teamtext1"><span class="teamtextcolour">Value</span>.</div>
+                    <div class="teamtext2">Which players are returning the most <span class="teamtextcolour">points</span> for their <span class="teamtextcolour">price</span>? Here are some cheaper players who could provide great <span class="teamtextcolour">value</span> for your FPL team. Data calculated on <span class="teamtextcolour">points</span> per <span class="teamtextcolour">million</span>.</div>
+                    <div class="teamtext3"><span class="greentext">Target</span> Players:</div>
+                    <div class="topplays">
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ TOPHIGH10['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/1medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ SECHIGH10['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/2medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ THIRDHIGH10['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/3medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div class="marginlit">{{ TOPHIGH10['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ SECHIGH10['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ THIRDHIGH10['name'] }}</div>
+                        <div></div>
+                        <div><span class="bluertext">{{ TOPHIGH10['value_season'] }}</span><span class="whitertext">v</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ SECHIGH10['value_season'] }}</span><span class="whitertext">v</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ THIRDHIGH10['value_season'] }}</span><span class="whitertext">v</span></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="FPLplayerWrapper2">
+            <div class="FPLplayer2">
+                <div class="FPLteam">
+                    {% set user_players = teams_data['under10per'] %}
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[0]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[0]['name'] }}</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[0]['total_points'] }}</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[1]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>              
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[1]['name'] }}</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[1]['total_points'] }}</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2]['name'] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[2]['total_points'] }}</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3]['name'] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[3]['total_points'] }}</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4]['name'] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[4]['total_points'] }}</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                              
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5]['name'] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[5]['total_points'] }}</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6]['name'] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[6]['total_points'] }}</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7]['name'] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[7]['total_points'] }}</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8]['name'] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[8]['total_points'] }}</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9]['name'] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[9]['total_points'] }}</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10]['name'] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[10]['total_points'] }}</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11]['name'] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[11]['total_points'] }}</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12]['name'] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[12]['total_points'] }}</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13]['name'] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[13]['total_points'] }}</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14]['name'] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[14]['total_points'] }}</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="teamtext1"><span class="teamtextcolour">Differentials</span>.</div>
+                    <div class="teamtext2">Low <span class="teamtextcolour">ownership</span>, and consistent <span class="teamtextcolour">points</span>. Looking to climb your mini-leagues? Look no further than a <span class="teamtextcolour">differential</span>, with less than <span class="teamtextcolour">10%</span> ownership.</div>
+                    <div class="teamtext3"><span class="greentext">Target</span> Players:</div>
+                    <div class="topplays">
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ TOPHIGH11['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/1medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ SECHIGH11['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/2medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ THIRDHIGH11['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/3medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div class="marginlit">{{ TOPHIGH11['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ SECHIGH11['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ THIRDHIGH11['name'] }}</div>
+                        <div></div>
+                        <div><span class="bluertext">{{ TOPHIGH11['total_points'] }}</span><span class="whitertext">pts</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ SECHIGH11['total_points'] }}</span><span class="whitertext">pts</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ THIRDHIGH11['total_points'] }}</span><span class="whitertext">pts</span></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="FPLplayerWrapper2">
+            <div class="FPLplayer2">
+                <div class="FPLteam">
+                    {% set user_players = teams_data['clean_sheets'] %}
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[0]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[0]['name'] }}</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[0]['clean_sheets'] }}</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[1]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>              
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[1]['name'] }}</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[1]['clean_sheets'] }}</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2]['name'] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[2]['clean_sheets'] }}</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3]['name'] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[3]['clean_sheets'] }}</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4]['name'] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[4]['clean_sheets'] }}</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                              
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5]['name'] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[5]['clean_sheets'] }}</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6]['name'] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[6]['clean_sheets'] }}</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7]['name'] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix3">{{ user_players[7]['clean_sheets'] }}</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8]['name'] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[8]['clean_sheets'] }}</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9]['name'] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[9]['clean_sheets'] }}</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10]['name'] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[10]['clean_sheets'] }}</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11]['name'] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix3">{{ user_players[11]['clean_sheets'] }}</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12]['name'] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix3">{{ user_players[12]['clean_sheets'] }}</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13]['name'] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix3">{{ user_players[13]['clean_sheets'] }}</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14]['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>  
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14]['name'] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix3">{{ user_players[14]['clean_sheets'] }}</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="teamtext1"><span class="teamtextcolour">Clean</span> Sheets.</div>
+                    <div class="teamtext2">Looking for the best <span class="teamtextcolour">defensive</span> assets for your team? Consider these <span class="teamtextcolour">defenders</span>. We know how <span class="teamtextcolour">significant</span> clean sheets are in FPL, so here are your <span class="teamtextcolour">standouts</span>.</div>
+                    <div class="teamtext3"><span class="greentext">Target</span> Players:</div>
+                    <div class="topplays">
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ TOPHIGH12['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/1medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ SECHIGH12['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/2medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div><img src="{{ url_for('static', filename='img/kits/' ~ THIRDHIGH12['team_id'] ~ '.png') }}" alt="Kit" class="scaled-down-image2"></div>
+                        <div><img src="{{ url_for('static', filename='img/3medal.png') }}" alt="Medal" class="scaled-down-image3"></div>
+                        <div class="marginlit">{{ TOPHIGH12['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ SECHIGH12['name'] }}</div>
+                        <div></div>
+                        <div class="marginlit">{{ THIRDHIGH12['name'] }}</div>
+                        <div></div>
+                        <div><span class="bluertext">{{ TOPHIGH12['clean_sheets'] }}</span><span class="whitertext">CS</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ SECHIGH12['clean_sheets'] }}</span><span class="whitertext">CS</span></div>
+                        <div></div>
+                        <div><span class="bluertext">{{ THIRDHIGH12['clean_sheets'] }}</span><span class="whitertext">CS</span></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gapper"></div>
+{% endblock %}
+
+

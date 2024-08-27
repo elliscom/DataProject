@@ -1,0 +1,1922 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+ .purple-box {
+    width: calc(100% - 80px);
+    height: 60px;
+    background: rgb(255,0,112);
+    background: linear-gradient(90deg, rgba(255,0,112,1) 0%, rgba(121,9,102,1) 61%, rgba(82,9,121,1) 100%);
+    position: absolute;
+    top: 0;
+    left: 80px; 
+    z-index: -1001;
+    box-shadow: 0px 4px 8px 0px rgba(255, 255, 255, 1); 
+ }
+
+ .purple-box span {
+    color: white;         
+    position: absolute;  
+    top: 10px;             
+    right: 20px;           
+    font-size: 1.7rem;  
+    font-weight: bold;    
+}
+
+.container {
+    flex-grow: 1; 
+    padding-left: 0px; 
+}
+
+.page-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding-left: 80px;
+}
+
+.FPLplayerWrapper3 {
+    width: calc(100% - 60px);
+    margin-left: 32px;
+    padding: 4px;
+    background: linear-gradient(90deg, rgba(255,0,112,1) 0%, rgba(121,9,102,1) 61%, rgba(82,9,121,1) 100%);
+    border-radius: 4px;
+    margin-top: 90px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.FPLplayerWrapper3X {
+    width: calc(100% - 60px);
+    margin-left: 32px;
+    padding: 4px;
+    background: linear-gradient(90deg, rgba(255,0,112,1) 0%, rgba(121,9,102,1) 61%, rgba(82,9,121,1) 100%);
+    border-radius: 4px;
+    margin-top: 160px !important;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.FPLplayer3 div {
+    background-color: #02020e;  
+    position: relative;
+}
+
+.FPLplayer3 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background-color: rgb(4, 3, 28);
+    padding: 25px;
+    box-sizing: border-box;
+    height: 460px;
+}
+
+.FPLplayerWrapper4 {
+    width: calc(100%);
+    margin-left: 0px;
+    padding: 4px;
+    background: rgb(0, 0, 0);
+    border-radius: 4px;
+    margin-top: 265px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.FPLplayer3 div {
+    background-color: #02020e;  
+    position: relative;
+}
+
+.FPLplayer4 {
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    width: 100%;
+    background-image: url('img/backer.png');
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    height: 415px;
+}
+
+.FPLplayer4 .box {
+    height: calc((545px + 135px * 2) / 12); 
+    border: transparent;
+    box-sizing: border-box;
+}
+.FPLplayer4 .box:first-child {
+    height: calc((545px - 25px * 2) / 12 - 1px);
+}
+
+.FPLplayer4 .box:last-child {
+    height: calc((545px - 25px * 2) / 12 - 1px);
+}
+
+
+.boxertext{
+    color: white;          
+    top: 10px;             
+    right: 20px;           
+    font-size: 1.5rem;  
+    margin-left: 280px;
+    margin-top: 10px;
+}
+
+.boxertext2{
+    color: white;          
+    top: 10px;             
+    right: 20px;           
+    font-size: 2.6rem;  
+    margin-left: 380px;
+}
+
+.FPLplayer3 div {
+    background-color: #02020e;  
+    position: relative;
+}
+
+.FPLplayer5 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    padding: 25px;
+    box-sizing: border-box;
+    height: 60px;
+    margin-left: 15px;
+}
+
+.FPLplayer6 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 360px;
+    margin-top: -25px;
+}
+
+.box {
+    width: 50%;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.boxertext3{
+    color: white;          
+    top: 10px;             
+    right: 20px;           
+    font-size: 1.9rem;  
+    font-style: normal;
+    margin-top: 70px;
+    margin-left: -25px;
+}
+
+.FPLplayer6 {
+    display: flex;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 360px;
+}
+
+.FPLplayer8 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255,0,112,1) 19%, rgba(121,9,102,1) 57%, rgba(82,9,121,1) 74%, white 75%, black 76%, black 100%);
+    padding: 25px;
+    box-sizing: border-box;
+    height: 80px;
+    margin-top: 40px;
+}
+
+.FPLplayer8low {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255,0,112,1) 9%, rgba(121,9,102,1) 27%, rgba(82,9,121,1) 45%, white 46%, black 47%, black 100%);
+    padding: 25px;
+    box-sizing: border-box;
+    height: 80px;
+    margin-top: 40px;
+}
+
+
+.FPLplayer8high {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255,0,112,1) 19%, rgba(121,9,102,1) 57%, rgba(82,9,121,1) 98%, white 99%, black 100%);
+    padding: 25px;
+    box-sizing: border-box;
+    height: 50px;
+    margin-top: 40px;
+}
+
+
+.boxertext4{
+    color: white;          
+    top: 10px;             
+    right: 20px;           
+    font-size: 4rem;  
+    margin-top: 120px;
+    font-style: normal;
+    margin-left: 240px;
+}
+
+.right-box {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    height: 100%;
+}
+
+.boxertext5 {
+    color: rgb(241, 222, 230);
+    width: 60%; 
+    text-align: left;
+    margin-top: 10px;
+    margin-left: -35px;
+}
+
+.FPLplayer9 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 460px;
+    padding-top: 45px;
+}
+
+.FPLplayer9 div {
+    height: calc(100% - 45px);
+    box-sizing: border-box;
+    border-right: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FPLplayer9div2, .FPLplayer9div3 {
+    width: 30%;
+}
+
+.FPLplayer9div1, .FPLplayer9div4 {
+    width: 20%;
+}
+
+.FPLplayer9 div:last-child {
+    border-right: none;
+}
+
+.lowtexter{
+    color: rgb(149, 56, 199)
+}
+
+.hightexter{
+    color: rgba(255,0,112,1)
+}
+
+.avtexter{
+    color: rgb(205, 11, 173)
+}
+
+.FPLplayer9div1{
+    color: white;
+}
+
+.FPLplayer10 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background-color: rgb(169, 67, 67);
+    padding: 25px;
+    box-sizing: border-box;
+    height: 100px;
+}
+
+/* the follow code is credit to https://www.youtube.com/@CodeInfoofficial */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+:root{
+    --clr: black;
+}
+body{
+    min-height: 100vh;
+    background: var(--clr);
+}
+.sidebar{
+    position: fixed;  
+    width: 80px;
+    height: 100vh;
+    background: white;
+    transition: 0.5s;
+    padding-left: 10px;
+    overflow: hidden;
+    top: 0;  
+    left: 0;  
+}
+
+.sidebar.active{
+    width:230px;
+}
+
+.sidebar ul{
+    position:relative;
+    height:100vh;
+}
+
+.sidebar ul li{
+    position: relative;
+    list-style: none;
+
+}
+
+.sidebar ul li.active{
+    background: var(--clr);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.sidebar ul li.active::before{
+    content:'';
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px 0 5px var(--clr);
+    background: transparent;
+}
+
+.sidebar ul li.active::after{
+    content:'';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 5px -5px 0 5px var(--clr);
+    background: transparent;
+}
+
+.sidebar ul li.logo
+{
+    margin-bottom: 50px;
+}
+
+.sidebar ul li.logo .icon {
+    font-size: 2em;
+    color: var(--clr);
+}
+
+.sidebar ul li.logo .text {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--clr);
+}
+
+.sidebar ul li a{
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+
+}
+
+.sidebar ul li a .icon{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    padding-left: 10px;
+    height: 70px;
+    font-size: 1.5em;
+    color:rgb(9, 1, 19);
+    transition: 0.5s;
+}
+
+.sidebar ul li a .text{
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items:center;
+    font-size: 1em;
+    color:rgb(7, 10, 62);
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    transition: 0.5px;
+    font-weight: bold;
+}
+
+.sidebar ul li.active a .icon{
+    color: #fff;
+}
+
+.sidebar ul li.active a .text{
+    color: var(--bg);
+}
+
+.sidebar ul li:hover a .icon,
+.sidebar ul li:hover a .text
+{
+    color: var(--bg);
+}
+
+.sidebar ul li.active a .icon:before{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    width: 60px;
+    background: var(--bg);
+    border-radius: 50%;
+    transition:0.5s;
+}
+
+.sidebar ul li:hover.active a .icon:before{
+    background: #fff;
+}
+
+.last{
+    position: absolute;
+    bottom: 0;
+    width:100%;
+}
+
+.IBOX
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.IBOX img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 170%;
+    object-fit: cover;
+}
+
+ .TOGGLEMENU{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgb(3, 13, 29);
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .TOGGLEMENU::before{
+    content: '';
+    position:absolute;
+    width: 20px;
+    height:3px;
+    background: #fff;
+    transform: translateY(-9px);
+    transition: 0.5s;
+    box-shadow: 0 9px 0 #fff;
+ }
+
+ .TOGGLEMENU::after{
+    content: '';
+    position:absolute;
+    width: 20px;
+    height:3px;
+    background: #fff;
+    transform: translateY(9px);
+    transition: 0.5s;
+ }
+
+ .TOGGLEMENU.active::before{
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+ }
+
+ .TOGGLEMENU.active::after{
+    transform: translateY(0px) rotate(-45deg);
+    box-shadow: 0 0 0 #fff;
+ }
+
+ /* end of credit */
+
+.corner-box.left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.rankstore {
+    height: 20%;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px; 
+    background: linear-gradient(90deg, 
+                                rgba(255,0,112,1) 19%, 
+                                rgba(121,9,102,1) 57%, 
+                                rgba(82,9,121,1) 100%);
+}
+
+.rankstore:last-child {
+    margin-bottom: 0;
+}
+
+
+.rankstore90{
+    background: linear-gradient(90deg, 
+                                rgba(255,0,112,1) 19%, 
+                                rgba(121,9,102,1) 57%, 
+                                rgba(82,9,121,1) 92%,
+                                black 93%,
+                                black 100%);
+}
+
+.rankstore80{
+    background: linear-gradient(90deg, 
+                                rgba(255,0,112,1) 19%, 
+                                rgba(121,9,102,1) 57%, 
+                                rgba(82,9,121,1) 83%,
+                                black 84%,
+                                black 100%);
+}
+
+.rankstore70{
+    background: linear-gradient(90deg, 
+                                rgba(255,0,112,1) 19%, 
+                                rgba(121,9,102,1) 57%, 
+                                rgba(82,9,121,1) 74%,
+                                black 75%,
+                                black 100%);
+}
+
+.rankstore60{
+    background: linear-gradient(90deg, 
+                                rgba(255,0,112,1) 19%, 
+                                rgba(121,9,102,1) 57%, 
+                                rgba(82,9,121,1) 66%,
+                                black 67%,
+                                black 100%);
+}
+
+.rankstore50{
+    background: linear-gradient(90deg, 
+                                rgba(255,0,112,1) 19%, 
+                                rgba(121,9,102,1) 57%, 
+                                black 58%,
+                                black 100%);
+}
+
+.rankstore40{
+    background: linear-gradient(90deg, 
+                                rgba(255,0,112,1) 19%, 
+                                rgba(121,9,102,1) 48%, 
+                                black 49%,
+                                black 100%);
+}
+
+.rankstore30{
+    background: linear-gradient(90deg,  
+                                rgba(255,0,112,1) 19%, 
+                                rgba(121,9,102,1) 40%, 
+                                black 41%,
+                                black 100%);
+}
+
+.rankstore20{
+    background: linear-gradient(90deg, 
+                                rgba(255,0,112,1) 19%, 
+                                rgba(121,9,102,1) 33%, 
+                                black 34%,
+                                black 100%);
+}
+
+.rankstore10{
+    background: linear-gradient(90deg, 
+                                rgba(255,0,112,1) 19%,
+                                black 23%,
+                                black 100%);
+}
+
+.rankstore0{
+    background: linear-gradient(90deg, 
+                                rgba(255,0,112,1) 15%
+                                black 6%,
+                                black 100%);
+}
+
+
+.rankstore .left-text {
+    padding-left: 15px;
+}
+
+.rankstore .right-text {
+    padding-right: 5px;
+    font-size: 0.75rem;
+}
+
+.FPLplayer11 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 460px;
+    padding-top: 45px;
+}
+
+.FPLplayer12 {
+    margin-top: 70px;
+    display: flex; 
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 360px;
+}
+
+.FPLplayerPREM {
+    margin-top: 35px;
+    display: flex; 
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 100px;
+}
+
+.FPLplayer13 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    box-sizing: border-box;
+    height: 360px;
+    background-image: url('img/nunez.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.FPLplayer14 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 460px;
+}
+
+.FPLplayer14 div {
+    height: calc(100%);
+    width: 25%;
+    box-sizing: border-box;
+    border-right: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.FPLplayer14 div:last-child {
+    border-right: none;
+}
+
+.FPLplayer16 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 200px;
+    margin-right: 50px;
+}
+
+.FPLplayer16trans {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important; 
+    align-items: center !important;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 200px;
+    margin-top: 100px;
+    margin-right: -200px !important;
+}
+
+.FPLplayer162 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 100px;
+}
+
+.FPLplayer163 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 25px;
+    margin-bottom: -20px !important;
+}
+
+.FPLplayer1632 {
+    display: flex;
+    flex-direction: column;
+    width: 99.5%;
+    background-color: rgb(0, 0, 0);
+    height: 200px;
+    margin-left: -1.5px !important;
+    margin-bottom: -15px !important;
+}
+
+.FPLplayer16322 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 200px;
+    margin-bottom: 280px;
+    margin-left: -5px !important;
+}
+
+.FPLplayer164 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important; 
+    width: 100%;
+    background-color: rgb(146, 56, 56);
+    box-sizing: border-box;
+    height: 100px;
+    margin-bottom: 20px !important;
+}
+
+.FPLplayer2 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background-color: rgb(4, 3, 28);
+    padding: 25px;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.FPLplayer2 div {
+    background-color: #000000;  
+    position: relative;
+}
+
+.FPLteam {
+    position: fixed;
+    margin-left: 23px;
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 2.6fr 0.3fr 2.6fr 0.3fr 2.6fr 0.3fr 2.6fr 0.3fr 2.6fr; 
+    grid-template-rows: 2.4fr 1fr 1fr 0.6fr 2.4fr 1fr 1fr 0.6fr 2.4fr 1fr 1fr 0.6fr 2.4fr 1fr 1fr; 
+    gap: 0px;
+    width: 50%;
+    height: 520px;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    border: 3px solid rgb(253, 251, 251);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.grid-cell {
+    border: 0.5px solid rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    font-size: 0.7rem;
+}
+
+.teamparent {
+    display: flex; 
+    flex-direction: column; 
+    margin-left: 30px;
+    background-color: rgb(4, 3, 28) !important;
+    margin-top: 5px;
+    width: 50%;
+    height: 520px;
+}
+
+.teamparent > .space, .teamparent > .exinfo {
+    flex-grow: 1;
+    height: 0; 
+    background-color: rgb(4, 3, 28) !important;
+}
+
+.exinfo {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: flex-start;
+    background-color: rgb(4, 3, 28) !important;
+}
+
+.whattext, .button69 {
+    width: 100%;
+    color: white;
+    font-weight: normal;
+    font-size: 1.8rem;
+    background-color: rgb(4, 3, 28);
+}
+
+.pink-text {
+    color: rgba(255,0,112,1);
+    font-size: 1.9rem;
+    background-color: rgb(4, 3, 28) !important;
+}
+
+.pink-text2 {
+    color: rgba(255,0,112,1);
+    font-size: 1.4rem;
+    background-color: transparent !important;
+}
+
+.whattext{
+    margin-top: 30px;
+    text-align: left;
+    background-color: rgb(4, 3, 28) !important;
+}
+
+.whattext2{
+    margin-top: 10px !important;
+    background-color: transparent !important;
+    color: white;
+    max-width: 460px;
+}
+
+.whattext3{
+    margin-top: 10px !important;
+    background-color: transparent !important;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.whattext4{
+    background-color: transparent !important;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.button69 {
+    display: inline-block;
+    width: 150px;
+    height: 40px !important;
+    background-image: linear-gradient(to right, rgba(255,0,112,1) 0%, rgba(121,9,102,1) 50%, rgba(82,9,121,1) 100%);
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 35px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 180px;
+    font-size: 1.3rem;
+}
+
+.button68 {
+    width: 400px;
+    height: 40px !important;
+    background-image: linear-gradient(to right, rgba(255,0,112,1) 0%, rgba(121,9,102,1) 50%, rgba(82,9,121,1) 100%);
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 35px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin-top: 45px;
+    margin-right: 20px;
+    font-size: 1.3rem;
+}
+
+.button69:hover {
+    transform: scale(1.05);
+}
+
+.button69:active {
+    transform: scale(0.95);
+}
+
+.button68:hover {
+    transform: scale(1.05);
+}
+
+.button68:active {
+    transform: scale(0.95);
+}
+
+.scaled-down-image {
+    width: 85%; 
+    height: auto;
+    margin-top: 5px; 
+  }
+
+  .scaled-down-image2 {
+    width: 75%; 
+    height: auto;
+  }
+
+  .scaled_downimg3 {
+    width: 90%; 
+    height: auto;
+  }
+
+  .premiumscaler{
+    width:70%;
+    height: 115%;
+  }
+
+  .premiumscalerai{
+    margin-left: 40px;
+    max-height: 95%;
+    max-width: auto;
+    margin-top: 20px;
+  }
+
+  .premiumscaler2{
+    width: 100%;
+    height: auto;
+  }
+
+  .premiumscaler22{
+    width: 100%;
+    height: auto;
+    margin-right: 15px !important;
+  }
+
+.FPLplayer15right{
+    width:100%; 
+    height: 100%; 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+
+.FPLplayer15right > div {
+    width: 100%;
+    height: 50%; 
+    border: 2px solid white;
+}
+
+.FULLPREDICTDEF {
+    width: 100%; 
+    height: 100%; 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    align-items: flex;
+}
+
+.FULLPREDICTDEF div {
+    background-color: #02020e;  
+    position: relative;
+    color: white;
+    width: 100%; 
+    height: 10%;
+    border: 2px solid white;
+}
+
+.FULLPREDICTDEF .DEF1 {
+    height: 20%;
+    flex-grow: 0;
+}
+
+.FULLPREDICTDEF .DEF2, .FULLPREDICTDEF .DEF3, .FULLPREDICTDEF .DEF4, .FULLPREDICTDEF .DEF5, .FULLPREDICTDEF .DEF6, .FULLPREDICTDEF .DEF7, .FULLPREDICTDEF .DEF8, .FULLPREDICTDEF .DEF9, .FULLPREDICTDEF .DEF10 {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.FULLPREDICTGK {
+    width: 100%; 
+    height: 100%; 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    align-items: flex;
+}
+
+.FULLPREDICTGK div {
+    background-color: #02020e;  
+    position: relative;
+    color: white;
+    width: 100%; 
+    height: 10%;
+    border: 2px solid white;
+}
+
+.FULLPREDICTGK .GK1 {
+    height: 20%;
+    flex-grow: 0;
+}
+
+.FULLPREDICTGK .GK2, .FULLPREDICTGK .GK3, .FULLPREDICTGK .GK4, .FULLPREDICTGK .GK5, .FULLPREDICTGK .GK6, .FULLPREDICTGK .GK7, .FULLPREDICTGK .GK8, .FULLPREDICTGK .GK9, .FULLPREDICTGK .GK10 {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.FPLplayer21 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 200px;
+}
+
+.FPLplayer21 div {
+    height: calc(100%); 
+    width: 25%; 
+    box-sizing: border-box;
+    border-right: 2px solid white; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: white;
+}
+
+.FPLplayer21 div:last-child {
+    border-right: none;
+}
+
+.divGK21 {
+    position: relative;
+    display: block; 
+}
+
+
+.divGK21 .box1, .divGK21 .box2 {
+    position: absolute;
+    width: 100%;
+    background-color: black;
+    box-sizing: border-box;
+}
+
+.divGK21 .box1 {
+    top: 0;
+    height: 70%; 
+}
+
+.divGK21 .box2 {
+    bottom: 0;
+    height: 30%;
+}
+
+.box1 .bestGKimage, .box1 .bestGKinfo {
+    position: absolute;
+    height: 100%;
+    background-color: black;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+.box1 .bestGKimage {
+    left: 0;
+    width: 40%;
+}
+
+.box1 .bestGKinfo {
+    left: 40%; 
+    width: 60%; 
+}
+
+.bestGKinfo > div {
+    position: absolute;
+    width: 100%; 
+    height: auto; 
+    background-color: black; 
+    box-sizing: border-box;
+}
+
+.bestGKinfo .bgkfirstname {
+    top: 0;
+    width: 100%;
+    height: 33.333%; 
+    position: absolute; 
+    display: flex; 
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    padding-left: 10px; 
+    margin-top: 20px; 
+    font-size: 1.2rem; 
+    color: white;
+    background-color: black;
+    box-sizing: border-box;
+}
+
+.bestGKinfo .bgklastname {
+    top: 35%;
+    font-size: 1.7rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.bestGKinfo .gkmoreinfo {
+    top: 70%;
+    height: 32px;
+}
+
+.gkmoreinfo {
+    position: relative;
+    display: block;
+    height: 100%; 
+    margin-top: 10px;
+}
+
+
+.gkmoreinfo .GKfixture, .gkmoreinfo .GKprice {
+    position: absolute;
+    height: 100%;
+    background-color: black; 
+    border: 1px solid white; 
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+
+.gkmoreinfo .GKfixture {
+    left: 0;
+    width: 50%;
+}
+
+.gkmoreinfo .GKprice {
+    left: 50%; 
+    width: 50%; 
+}
+
+.bestGKimage {
+    position: relative; 
+    height: 100%; 
+    display: block; 
+}
+
+.bestGKimage .GKimager, .bestGKimage .GKclubber {
+    position: absolute;
+    width: 100%; 
+    background-color: black; 
+    color: white; 
+    border: 1px solid white; 
+    box-sizing: border-box;
+}
+
+.bestGKimage .GKimager {
+    top: 0;
+    height: 78%;
+}
+
+.bestGKimage .GKclubber {
+    bottom: 0;
+    height: 22%;
+}
+
+.GK1 {
+    display: flex;
+    height: 100px; 
+    width: 100%; 
+}
+
+.GK2 {
+    display: flex;
+    height: 100px;
+    width: 100%; 
+}
+
+.GK2 > div {
+    height: 100%;
+}
+
+.GK2 .namefollow {
+    width: 60%;
+}
+
+.GK2 .xpfollow {
+    width: 40%; 
+}
+
+.GK1 > div {
+    height: 100%; 
+}
+
+.GK1 .topimage {
+    width: 35%;
+}
+
+.GK1 .topname {
+    width: 45%; 
+}
+
+.GK1 .topxp {
+    width: 20%; 
+}
+
+.FPLplayertarget {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 560px;
+    padding-left: 10px;
+    margin-bottom: -20px !important;
+    
+}
+
+.FPLplayertarget div {
+    height: 100%; 
+    width: 50%; 
+    box-sizing: border-box;
+    display: flex;
+    color: white;
+}
+
+.targettext {
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+    height: 200px; 
+    box-sizing: border-box;
+    font-style: normal;
+}
+
+.targettext > div {
+    width: 100%; 
+    height: 50%; 
+    box-sizing: border-box; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+    border-right: 2px solid transparent; 
+}
+
+
+.targettext > div {
+    padding: 10px;
+    background-color: #000000; 
+}
+
+.targettext2 {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    border-right: 2px solid transparent; 
+}
+
+.actualtargettext {
+    width: 70% !important; 
+    border-right: 2px solid transparent !important;
+    margin-top: 420px; 
+    text-align: right;
+    font-size: 2.5rem;
+    margin-left: 60px;
+    padding-left: 40px;
+}
+
+.actualtargetimage {
+    width: 30%;  
+    border-right: 2px solid transparent !important;
+    padding-top: 170px;
+    margin-top: 50px;
+}
+
+.actualtargetimage img {
+    width: 80%; 
+    height: auto; 
+    object-fit: contain; 
+    display: block; 
+    padding-right: 50px;
+}
+
+.GKimager img {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain;
+    display: block; 
+}
+
+.targettext3 {
+    max-width: 400px; 
+    flex-grow: 0;
+    flex-shrink: 1;
+    text-align: center;
+    margin-bottom: 150px;
+    margin-left: 90px;
+    color:rgb(236, 210, 223) !important;
+}
+
+
+
+.targetranker {
+    display: grid !important;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 15% 25% 15% 45%; 
+    height: 530px !important ;
+    grid-gap: 10px; 
+    margin-right: 20px;
+}
+
+.rankertopdiv, .rankermiddiv, .rankermid2div, .rankerbotdiv {
+    width: 530px !important; 
+    height: 100%;
+    border: 2px solid transparent; 
+}
+.rankertopdiv{
+    padding-left: 50px;
+    padding-top: 80px;
+    font-size: 1.5rem;
+}
+
+.greenotext{
+    color: rgb(6, 181, 24);
+    padding-right: 8px;
+}
+
+.targetotext{
+    color:rgba(255,0,112,1);
+    padding-right: 8px;
+}
+
+.rankerbotdiv {
+    display: grid !important;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 35% 20% 45%; 
+    height: 220px !important; 
+}
+
+.totherankdesc, .totherank, .chancetorank {
+    width: 530px !important;
+    height: 100%; 
+    border: 2px solid transparent; 
+}
+
+.FPLplayerextra {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    grid-template-rows: repeat(17, 1fr); 
+    gap: 1px; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 100%;
+    padding: 5px; 
+    color: white;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.FPLplayerextra::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.FPLplayerextra > div {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.FPLplayerextradesc {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    grid-template-rows: repeat(1, 1fr); 
+    gap: 1px; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 50px;
+    padding: 5px; 
+    color: white;
+    text-align: center;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.FPLplayerextra {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.grid-row {
+    display: flex;
+    gap: 5px; 
+}
+
+.grid-item {
+    flex: 1;
+    background-color: black; 
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+.rankermiddiv {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.button70 {
+    width: 20%; 
+    height: 100%;
+    flex: 1; 
+    text-align: center; 
+}
+
+.totherank{
+    max-height: 60%;
+}
+
+.button70 {
+    background: linear-gradient(to right, rgba(121,9,102,1) 50%, rgba(82,9,121,1) 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 3px;
+    flex-grow: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-height: 80%;
+    border-radius: 5px;
+    border: 3px solid white;
+
+}
+.button70:hover, .button70:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, rgba(255,0,112,1) 0%, rgba(121,9,102,1) 50%);
+}
+.rankermiddiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch; 
+}
+
+.totherankdesc{
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.button70:active {
+    background: linear-gradient(to right, rgba(255,0,112,1) 0%, rgba(121,9,102,1) 50%);
+}
+
+.totherank{
+    border-radius: 2px;
+    border: 3px solid white;
+
+}
+
+.rankermid2div{
+    padding-top: 100px;
+}
+
+.grid-cell {
+    border: 0.5px solid rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    font-size: 0.7rem;
+}
+
+.grid-cell-fix1 {
+    border-bottom: 4px solid rgba(8, 199, 24, 0.831);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 100%;
+    width: 60%;
+    font-size: 0.7rem;
+    margin-left: 17px;
+}
+
+.grid-cell-fix2 {
+    border-bottom: 4px solid rgb(5, 113, 11);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 100%;
+    width: 60%;
+    font-size: 0.7rem;
+    margin-left: 17px;
+}
+
+.grid-cell-fix3 {
+    border-bottom: 4px solid rgb(214, 102, 11);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 100%;
+    width: 60%;
+    font-size: 0.7rem;
+    margin-left: 17px;
+}
+
+.grid-cell-fix4 {
+    border-bottom: 4px solid rgb(224, 18, 18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 100%;
+    width: 60%;
+    font-size: 0.7rem;
+    margin-left: 17px;
+}
+
+.grid-cell-fix5 {
+    border-bottom: 4px solid rgb(155, 34, 34);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 100%;
+    width: 60%;
+    font-size: 0.7rem;
+    margin-left: 17px;
+}
+
+.textex{
+    font-size: 0.9rem;
+    color: aqua;
+    margin-right: 2px;
+    font-style: normal !important;
+}
+
+.textex2{
+    font-size: 0.8rem;
+    color: white;
+    font-style: italic;
+}
+
+.textex3{
+    font-size: 1.2rem;
+    color: aqua;
+    margin-left: 5px;
+    font-style: normal !important;
+}
+
+.small-image {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.small-image2 {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.small-image22 {
+    max-width: 150px;
+    max-height: 150px;
+    margin-left: 40px;
+}
+
+.GK2 {
+    display: flex; 
+    width: 100%; 
+}
+
+.GK2 > .namefollow:first-child {
+    width: 60px;
+    flex-shrink: 0; 
+    border: 0px !important;
+    margin-left: 10px;
+}
+
+.GK2 > .namefollow:nth-child(2),
+.GK2 > .xpfollow {
+    flex-grow: 1;
+    flex-basis: 0; 
+    border: 0px !important;
+}
+
+.ptstext{
+    color: aqua;
+}
+
+.ptstext2{
+    color: white;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+.letschange {
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 87px;
+    margin-left: 350px;
+}
+
+.letschange2 {
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 87px;
+    margin-left: 280px !important;
+}
+
+.letschange3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 37px;
+    margin-left: 280px !important;
+}
+
+.letschange4 {
+    color: white;
+    font-size: 1.3rem;
+    margin-top: -10px;
+    margin-left: 280px !important;
+}
+
+.fplplayergap{
+    height: 70px;
+    background-color: black;
+    color: white;
+    margin-top: 50px !important;
+    padding-top: 27px !important;
+}
+
+.fplplayergaptext{
+    margin-top: 50px !important;
+    margin-left: 240px;
+}
+
+.pink-text3 {
+    color: rgba(255,0,112,1);
+    background-color: transparent !important;
+    font-style: bold;
+}
+
+.isthatasmallerimage{
+    width: 60%;
+    height: auto;
+}
+
+.isthatasmallerimage2{
+    width: 75%;
+    height: auto;
+}
+
+.isthatasmallerimage3{
+    width: 34%;
+    height: auto;
+    margin-bottom: 7px !important;
+}
+
+.gridda {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(9, auto);
+    margin-top: 10px !important;
+}
+
+
+.FPLplayer15 {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: rgb(4, 3, 28);
+    box-sizing: border-box;
+    height: 260px;
+}
+
+.FPLplayer15G {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 260px;
+}
+
+.FPLplayer15 .column {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 10px;
+}
+
+.FPLplayer15 .column:nth-child(1),
+.FPLplayer15 .column:nth-child(2) {
+    width: 30%; /* Adjust if necessary */
+}
+
+.FPLplayer15 .column:nth-child(1) {
+    margin-left: 40px !important;
+}
+
+.FPLplayer15 .column.gridda {
+    width: 40%;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(15, 1fr);
+    margin-top: 17px !important;
+}
+
+.FPLplayer15 .column.gridda > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent !important;
+}
+
+.isthatasmallerimage {
+    max-width: 100%;
+    height: auto;
+    margin-top: -20px !important;
+}
+
+.dunnotext{
+    color: rgb(255, 227, 69);
+}
+
+.grappy{
+    margin-bottom: 10px;
+}
+
+.bankern{
+    margin-left: 20px !important;
+    max-width: 700px !important;
+}
+
+.FPLPlayerWrapperCaptain {
+    width: calc(100% - 60px);
+    margin-left: 32px;
+    padding: 4px;
+    background: linear-gradient(90deg, rgba(255,0,112,1) 0%, rgba(121,9,102,1) 61%, rgba(82,9,121,1) 100%);
+    border-radius: 4px;
+    margin-top: 80px !important;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.FPLPlayerWrapperCaptain2 {
+    width: calc(100% - 60px);
+    margin-left: 32px;
+    padding: 4px;
+    background: linear-gradient(90deg, rgba(255,0,112,1) 0%, rgba(121,9,102,1) 61%, rgba(82,9,121,1) 100%);
+    border-radius: 4px;
+    margin-top: 65px !important;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.FPLPlayerCaptain {
+    width: 100%;
+    background-color: rgb(4, 3, 28);
+    box-sizing: border-box;
+    height: 200px;
+    color: rgb(250, 235, 235);
+}
+
+.tempoe{
+    font-size: 2rem;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+    margin-left: 50px;
+    max-width: 400px !important;
+}
+
+.imager6{
+    width: 100%;
+    height: auto;
+    margin-top: -80px !important;
+}
+
+.imager7{
+    width: 100%;
+    height: auto;
+    margin-top: -71px !important;
+}
+
+.caption5{
+    margin-top: -200px !important;
+    margin-left: 730px !important;
+    font-size: 1.8rem;
+}
+
+.caption6{
+    margin-left: 730px !important;
+    font-size: 1.3rem;
+    color: aqua;
+}
+
+.ptstext6{
+    color: white !important;
+}
+
+.FPLplayertemp{
+    margin-top: 100px;
+    max-width: 750px;
+    margin-left: 50px;
+    background-color: rgb(4, 3, 28);
+}
+
+.premiumscaler4{
+    width: 90%;
+    height: auto;
+    margin-right: -20px !important;
+}
+
+.FPLplayer163222 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 200px;
+    margin-top: 80px;
+    align-items: center;
+}
+
+.endsection{
+    height: 80px;
+    color: white;
+    align-items: center;
+    margin-left: 400px;
+    margin-top: 620px;
+}

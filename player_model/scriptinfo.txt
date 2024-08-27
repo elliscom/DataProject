@@ -1,0 +1,16 @@
+The code included in this section represents the code used to train the player points/goals prediction model. 
+Each part of model training was performed in google colab, due to it having more processing power than my laptop.
+
+I did not include the code to aquire the data in this section, as it was extremely extensive.
+I had several google colab notebooks for this. If you require the data aquistion code, please let me know. 
+It is fairly similar to the code used in my app.py, and does not introduce too many new technqiues that I haven't used before.
+I have talked about this process in detail in my write-up, ie) feature engineering, csv file manipulation etc.
+
+Please note that this code is just the player points model. I have constructed in a way that changing total_points to goals_scored will run the goals scored prediction model. 
+
+These scripts will not function if you are to run them, as they are executed in google colab. If you want to test them for yourself, please take the code line-by-line into google colab, and upload the respective datasets. 
+
+All final csvs used for the current gameweek are present in the final_datasets section of the 'static' folder.
+
+- Ellis.  
+

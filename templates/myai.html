@@ -1,0 +1,807 @@
+
+{% extends 'base.html' %}
+
+{% block title %}My AI{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='myai.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="purple-box">
+        <span>My AI</span>
+    </div>
+    <div class="FPLplayerWrapper3">
+        <div class="FPLplayer3">
+            <img src="../static/img/PredAI.png" alt="Value Image" class="premiumscalerai">
+        </div>
+    </div>
+    <div class="FPLplayer12">
+        <img src="../static/img/myfplpremium2.png" alt="Value Image" class="premiumscaler">
+    </div>
+    <div class="FPLplayerPREM">
+         <div class="button68">authorise</div>    
+    </div>
+    <div class="FPLplayerWrapper4">
+        <div class="FPLplayer4">
+            <div class="box">
+            </div>
+            <div class="box">            
+            </div>
+            <div class="box">  
+                  <div class="boxertext">Welcome to...</div> 
+            </div>
+            <div class="box"> 
+                 <div class="boxertext2">Your <b>AI.<b></div> 
+            </div>
+            <div class="box">            
+            </div>
+            <div class="box">           
+            </div>
+        </div>
+    </div>
+    <div class="FPLplayer6">
+        <div class="box left-box">
+            <div class="boxertext4">{{ avg_prediction if avg_prediction != 'No data' else 'No prediction available' }}.</div>
+        </div>
+        <div class="box right-box">
+            <div class="boxertext3"><b><span class="avtexter">Average</span></b> predicted rank.</div>
+            <div class="boxertext5">We ran 100 simulations using Artificial Intelligence to predict your season rank. This projection is based on historical rank data, rank momentum, and your experience as an FPL manager.</div>
+        </div>
+    </div>
+    <div class="FPLplayer8">
+    </div>
+    <div class="FPLplayer6">
+        <div class="box left-box">
+            <div class="boxertext4">{{ worst_prediction if worst_prediction != 'No data' else 'No prediction available' }}.</div>
+        </div>
+        <<div class="box right-box">
+            <div class="boxertext3"><b><span class="lowtexter">Lowest</span></b> predicted rank.</div>
+            <div class="boxertext5">Out of the 100 live simulations, here is your lowest predicted rank.</div>
+        </div>
+    </div>
+    <div class="FPLplayer8low">
+    </div>
+    <div class="FPLplayer6">
+        <div class="box left-box">
+            <div class="boxertext4">{{ best_prediction if best_prediction != 'No data' else 'No prediction available' }}.</div>
+        </div>
+        <div class="box right-box">
+            <div class="boxertext3"><b><span class="hightexter">Highest</span></b> predicted rank.</div>
+            <div class="boxertext5">Out of the 100 live simulations, here is your highest predicted rank.</div>
+        </div>
+    </div>
+    <div class="FPLplayer8high">
+    </div>
+    <div class="FPLplayertarget">
+        <div class="targettext">
+            <div class="targettext2">
+                <div class="actualtargettext"><span class="targetotext">Target </span>  Rank.</div>
+                <div class="actualtargetimage">
+                    <video autoplay loop muted playsinline width="85px" height="85px">
+                        <source src="{{ url_for('static', filename='img/targetimg_animation.mp4') }}" type="video/mp4">
+                        No tag.
+                    </video>
+                </div>
+            </div>
+            <div class="targettext3">How many FPL points are you away from your target rank? Using AI, we'll run simulations to determine how likely you are to achieve it.</div>
+        </div>
+        <div class="targetranker">
+            <div class="rankertopdiv"></div>
+            <div class="rankermid2div">
+                Select Rank Goal:
+            </div>
+            <div class="rankermiddiv">
+                <button class="button70" onclick="updateRankData('1m')"><b>1m</b></button>
+                <button class="button70" onclick="updateRankData('100k')"><b>100k</b></button>
+                <button class="button70" onclick="updateRankData('10k')"><b>10k</b></button>
+                <button class="button70" onclick="updateRankData('1k')"><b>1k</b></button>
+                <button class="button70" onclick="updateRankData('1')"><b>1</b></button>           
+            </div>
+            <div class="rankerbotdiv">
+            <div class="totherank" id="totherank">
+                
+            </div>
+            <div class="totherankdesc" id="totherankdesc">
+             
+            </div>
+                <div class="chancetorank" id="percentageChance">(% chance for each rank)</div>
+            </div>
+        </div>
+    </div>
+        <div class="FPLplayerWrapper3">
+            <div class="FPLplayer2">
+               <div class="FPLteam">
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[0][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[0][0] }}</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell-fix{{ user_players[0][4] }}">{{ user_players[0][3] }} ({{ user_players[0][5] }})</div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[1][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>               
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[1][0] }}</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell-fix{{ user_players[1][4] }}">{{ user_players[1][3] }} ({{ user_players[1][5] }})</div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[2][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[2][0] }}</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell-fix{{ user_players[2][4] }}">{{ user_players[2][3] }} ({{ user_players[2][5] }})</div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[3][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[3][0] }}</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell-fix{{ user_players[3][4] }}">{{ user_players[3][3] }} ({{ user_players[3][5] }})</div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[4][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[4][0] }}</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell-fix{{ user_players[4][4] }}">{{ user_players[4][3] }} ({{ user_players[4][5] }})</div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[5][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div>                             
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[5][0] }}</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell-fix{{ user_players[5][4] }}">{{ user_players[5][3] }} ({{ user_players[5][5] }})</div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[6][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[6][0] }}</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell-fix{{ user_players[6][4] }}">{{ user_players[6][3] }} ({{ user_players[6][5] }})</div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[7][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">{{ user_players[7][0] }}</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell-fix{{ user_players[7][4] }}">{{ user_players[7][3] }} ({{ user_players[7][5] }})</div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[8][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[8][0] }}</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell-fix{{ user_players[8][4] }}">{{ user_players[8][3] }} ({{ user_players[8][5] }})</div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[9][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[9][0] }}</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell-fix{{ user_players[9][4] }}">{{ user_players[9][3] }} ({{ user_players[9][5] }})</div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[10][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[10][0] }}</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell-fix{{ user_players[10][4] }}">{{ user_players[10][3] }} ({{ user_players[10][5] }})</div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[11][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">{{ user_players[11][0] }}</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell-fix{{ user_players[11][4] }}">{{ user_players[11][3] }} ({{ user_players[11][5] }})</div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[12][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">{{ user_players[12][0] }}</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell-fix{{ user_players[12][4] }}">{{ user_players[12][3] }} ({{ user_players[12][5] }})</div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[13][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">{{ user_players[13][0] }}</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell-fix{{ user_players[13][4] }}">{{ user_players[13][3] }} ({{ user_players[13][5] }})</div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/' ~ user_players[14][1] ~ '.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">{{ user_players[14][0] }}</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell-fix{{ user_players[14][4] }}">{{ user_players[14][3] }} ({{ user_players[14][5] }})</div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="space"></div> 
+                        <div class="exinfo">
+                            <div class="whattext"> <b>Your <span class="pink-text">FPL</span> Squad.</b></div>
+                            <div class="whattext2">Using our AI model, here are your predicted FPL points for the upcoming gameweek.</div>
+                            <div class="whattext3">Predicted Points: <b><span class="pink-text2">{{ predictedNumberFINAL }}</span></b></div>
+                        </div>
+                    <div class="space"></div>     
+                </div>
+            </div>
+        </div>
+    <div class="FPLplayer16">
+        <div class="letschange"><span class="pink-text2"><b>{{ predictedNumberFINAL }}</b></span> points? Let's see if we can do better...</div>
+    </div>
+        <div class="FPLplayerWrapper3">
+            <div class="FPLplayer2">
+               <div class="FPLteam">
+                    {% for row in range(1, 16) %}
+                        {% for col in range(1, 10) %}
+
+                            {% if row == 1 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/3.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 2 and col == 3 %}
+                                <div class="grid-cell">Neto</div>
+                            {% elif row == 3 and col == 3 %}
+                                <div class="grid-cell"><span class="textex">6.67 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 1 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/15.png') }}" alt="Kit" class="scaled-down-image"></div>               
+                            {% elif row == 2 and col == 7 %}
+                                <div class="grid-cell">Dubravka</div>
+                            {% elif row == 3 and col == 7 %}
+                                <div class="grid-cell"><span class="textex">5.04 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 5 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/11.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 1 %}
+                                <div class="grid-cell">Bradley</div>
+                            {% elif row == 7 and col == 1 %}
+                                <div class="grid-cell"><span class="textex">9.73 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 5 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/18.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 3 %}
+                                <div class="grid-cell">Romero</div>
+                            {% elif row == 7 and col == 3 %}
+                                <div class="grid-cell"><span class="textex">9.57 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 5 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/4.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 6 and col == 5 %}
+                                <div class="grid-cell">Roerslev</div>
+                            {% elif row == 7 and col == 5 %}
+                                <div class="grid-cell"><span class="textex">7.92 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 5 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/7.png') }}" alt="Kit" class="scaled-down-image"></div>                             
+                            {% elif row == 6 and col == 7 %}
+                                <div class="grid-cell">Gusto</div>
+                            {% elif row == 7 and col == 7 %}
+                                <div class="grid-cell"><span class="textex">6.59 </span><span class="textex2"> pts</span></div>
+                          
+                            {% elif row == 5 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/7.png') }}" alt="Kit" class="scaled-down-image"></div>
+                            {% elif row == 6 and col == 9 %}
+                                <div class="grid-cell">Disasi</div>
+                            {% elif row == 7 and col == 9 %}
+                                <div class="grid-cell"><span class="textex">6.10 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 9 and col == 1 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/10.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 10 and col == 1 %}
+                                <div class="grid-cell">Wilson</div>
+                            {% elif row == 11 and col == 1 %}
+                                <div class="grid-cell"><span class="textex">9.67 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 9 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/19.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 10 and col == 3 %}
+                                <div class="grid-cell">Kudus</div>
+                            {% elif row == 11 and col == 3 %}
+                                <div class="grid-cell"><span class="textex">8.70 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 9 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/18.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 10 and col == 5 %}
+                                <div class="grid-cell">Son</div>
+                            {% elif row == 11 and col == 5 %}
+                                <div class="grid-cell"><span class="textex">8.47 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 9 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/3.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 10 and col == 7 %}
+                                <div class="grid-cell">Cook</div>
+                            {% elif row == 11 and col == 7 %}
+                                <div class="grid-cell"><span class="textex">7.12 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 9 and col == 9 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/15.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 10 and col == 9 %}
+                                <div class="grid-cell">Gordon</div>
+                            {% elif row == 11 and col == 9 %}
+                                <div class="grid-cell"><span class="textex">6.88 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 13 and col == 3 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/2.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 14 and col == 3 %}
+                                <div class="grid-cell">Watkins</div>
+                            {% elif row == 15 and col == 3 %}
+                                <div class="grid-cell"><span class="textex">10.46 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 13 and col == 5 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/10.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 14 and col == 5 %}
+                                <div class="grid-cell">Muniz</div>
+                            {% elif row == 15 and col == 5 %}
+                                <div class="grid-cell"><span class="textex">7.45 </span><span class="textex2"> pts</span></div>
+
+                            {% elif row == 13 and col == 7 %}
+                                <div class="grid-cell"><img src="{{ url_for('static', filename='img/kits/3.png') }}" alt="Kit" class="scaled-down-image"></div> 
+                            {% elif row == 14 and col == 7 %}
+                                <div class="grid-cell">Semenyo</div>
+                            {% elif row == 15 and col == 7 %}
+                                <div class="grid-cell"><span class="textex">7.07 </span><span class="textex2"> pts</span></div>
+                            {% else %}
+                                <div class="grid-cell"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="teamparent">
+                    <div class="space"></div>
+                        <div class="exinfo">
+                            <div class="whattext"><b><span class="pink-text">AI </span>FPL Squad.</b></div>
+                            <div class="whattext2">Using our predictive points model, here is the generative AI team for the upcoming gameweek.</div>
+                            <div class="whattext3">Predicted Points: <b><span class="pink-text2">117.44</span></b></div>
+                        </div>
+                    <div class="space"></div>     
+                </div>
+            </div>
+        </div>
+    <div class="FPLplayer162">
+        <div class="letschange2">You are currently <span class="pink-text2">{{ difference }}</span> points away from the <span class="pink-text2"><b>AI</b></span> team.</div>
+    </div>
+    <div class="FPLplayer163">
+    </div>
+    <div class="FPLplayer16322">
+        <img src="../static/img/adambacker3.png" alt="Value Image" class="premiumscaler2">
+    </div>
+        <div class="FPLplayer1632">
+            <img src="../static/img/topplayers.png" alt="Value Image" class="premiumscaler22">
+        </div>
+        <div class="fplplayergap">
+            <span class="fplplayergaptext">we would <span class="pink-text3">target</span> these players, but if you feel like being a bit <span class="pink-text3">different</span>, here are <span class="pink-text3">36</span> more...</span>
+        </div>
+        <div class="FPLplayer14">
+            <div class="FULLPREDICTGK">
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/15.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Dubravka</div>
+                    <div class="xpfollow"><span class="ptstext">5.04 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/1.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Raya</div>
+                    <div class="xpfollow"><span class="ptstext">3.86 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/4.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Flekken</div>
+                    <div class="xpfollow"><span class="ptstext">3.11 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/13.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Ederson</div>
+                    <div class="xpfollow"><span class="ptstext">2.66 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/11.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Kelleher</div>
+                    <div class="xpfollow"><span class="ptstext">2.51 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/7.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Petrovic</div>
+                    <div class="xpfollow"><span class="ptstext">2.05 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/14.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Onana</div>
+                    <div class="xpfollow"><span class="ptstext">2.02 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/9.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Pickford</div>
+                    <div class="xpfollow"><span class="ptstext">1.73 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/6.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Grbic</div>
+                    <div class="xpfollow"><span class="ptstext">1.59 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/17.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Henderson</div>
+                    <div class="xpfollow"><span class="ptstext">0.81 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+            </div>
+            <div class="FULLPREDICTGK">
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/18.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Romero</div>
+                    <div class="xpfollow"><span class="ptstext">9.57 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/4.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Roerslev</div>
+                    <div class="xpfollow"><span class="ptstext">7.92 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/7.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Gusto</div>
+                    <div class="xpfollow"><span class="ptstext">6.59 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/7.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Disasi</div>
+                    <div class="xpfollow"><span class="ptstext">6.10 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/16.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Toffolo</div>
+                    <div class="xpfollow"><span class="ptstext">6.08 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/11.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Van Dijk</div>
+                    <div class="xpfollow"><span class="ptstext">5.68 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/10.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Robinson</div>
+                    <div class="xpfollow"><span class="ptstext">5.51 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/15.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Burn</div>
+                    <div class="xpfollow"><span class="ptstext">5.45 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/2.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Digne</div>
+                    <div class="xpfollow"><span class="ptstext">5.26 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/1.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Saliba</div>
+                    <div class="xpfollow"><span class="ptstext">5.24 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+            </div>
+            <div class="FULLPREDICTGK">
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/19.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Kudus</div>
+                    <div class="xpfollow"><span class="ptstext">8.71 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/18.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Son</div>
+                    <div class="xpfollow"><span class="ptstext">8.47 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/3.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Cook</div>
+                    <div class="xpfollow"><span class="ptstext">7.12 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/15.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Gordon</div>
+                    <div class="xpfollow"><span class="ptstext">6.88 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/18.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Johnson</div>
+                    <div class="xpfollow"><span class="ptstext">6.56 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/1.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Havertz</div>
+                    <div class="xpfollow"><span class="ptstext">6.41 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/13.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Rodri</div>
+                    <div class="xpfollow"><span class="ptstext">6.36 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/11.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Salah</div>
+                    <div class="xpfollow"><span class="ptstext">6.32 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/2.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Bailey</div>
+                    <div class="xpfollow"><span class="ptstext">6.15 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/7.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Palmer</div>
+                    <div class="xpfollow"><span class="ptstext">5.92 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+            </div>
+            <div class="FULLPREDICTGK">
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/10.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Muniz</div>
+                    <div class="xpfollow"><span class="ptstext">7.45 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/3.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Semenyo</div>
+                    <div class="xpfollow"><span class="ptstext">7.07 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/15.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Isak</div>
+                    <div class="xpfollow"><span class="ptstext">6.56 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/13.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Haaland</div>
+                    <div class="xpfollow"><span class="ptstext">6.53 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/4.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Wissa</div>
+                    <div class="xpfollow"><span class="ptstext">5.07 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/12.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Woodrow</div>
+                    <div class="xpfollow"><span class="ptstext">5.07 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/5.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Welbeck</div>
+                    <div class="xpfollow"><span class="ptstext">4.86 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/1.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Jesus</div>
+                    <div class="xpfollow"><span class="ptstext">4.36 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/17.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">McBurnie</div>
+                    <div class="xpfollow"><span class="ptstext">3.91 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+                <div class="GK2">
+                    <div class="namefollow">
+                        <img src="{{ url_for('static', filename='img/kits/17.png') }}" alt="Player Image" class="small-image">
+                    </div>
+                    <div class="namefollow">Archer</div>
+                    <div class="xpfollow"><span class="ptstext">3.75 </span> <span class="ptstext2"> pts</span></div>
+                </div>
+            </div>
+        </div>
+    <div class="FPLPlayerWrapperCaptain">
+        <div class="FPLPlayerCaptain">
+            <div><img src="../static/img/captain.png" alt="Value Image" class="imager6"></div>
+            <div class="caption5">{{ highest_player[1] }}</div>
+            <div class="caption6"><span class="ptstext6">As captain: </span> {{ highest_player['x2predpoints'] }}<span class="ptstext6"> points</span></div>
+        </div>
+    </div>
+    <div class="FPLPlayerWrapperCaptain2">
+        <div class="FPLPlayerCaptain">
+            <div><img src="../static/img/diffplayer.png" alt="Value Image" class="imager7"></div>
+        </div>
+    </div>
+    <div class="FPLplayer16trans">
+        <img src="{{ url_for('static', filename='img/transwreck2.png') }}" alt="Player Image" class="isthatasmallerimage2">
+    </div>
+    <div class="FPLplayerWrapper3">
+        <div class="FPLplayer15">
+            <div class="column">
+                <div>
+                    <img src="{{ url_for('static', filename='img/kits/nah2.png') }}" alt="Player Image" class="small-image2">
+                </div>
+                <div>{{ defender.name }}</div>
+                <div>Predicted Points: <span class="ptstext">{{ defender.predicted_points }}</span></div>
+                <div>Cost: <span class="dunnotext">{{ defender.cost }}</span></div>
+            </div>
+            <div class="column">
+                <img src="../static/img/switcharrows2.png" alt="Value Image" class="isthatasmallerimage">
+                <div class="bankern">with your $<span class="dunnotext">{{ bank }}</span>, you can get...</div>
+            </div>
+            <div class="column gridda">
+                {% if player3AFFORD['DEF']|length > 0 %}
+                <div><img src="../static/img/AIkit2.png" alt="Value Image" class="isthatasmallerimage3"></div>
+                <div>{{ player3AFFORD['DEF'][0].name }}</div>
+                <div>Predicted Points: <span class="ptstext">{{ player3AFFORD['DEF'][0].predicted_points }}</span></div>
+                <div class="grappy">Cost: <span class="dunnotext">{{ player3AFFORD['DEF'][0].cost }}</span></div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="FPLplayerWrapper3">
+        <div class="FPLplayer15">
+            <div class="column">
+                <div>
+                    <img src="{{ url_for('static', filename='img/kits/nah2.png') }}" alt="Player Image" class="small-image2">
+                </div>
+                <div>{{ mid.name }}</div>
+                <div>Predicted Points: <span class="ptstext">{{ mid.predicted_points }}</span></div>
+                <div>Cost: <span class="dunnotext">{{ mid.cost }}</span></div>
+            </div>
+            <div class="column">
+                <img src="../static/img/switcharrows2.png" alt="Value Image" class="isthatasmallerimage">
+                <div class="bankern">with your $<span class="dunnotext">{{ bank }}</span>, you can get...</div>
+            </div>
+            <div class="column gridda">
+                {% if player3AFFORD['MID']|length > 0 %}
+                <div><img src="../static/img/AIkit2.png" alt="Value Image" class="isthatasmallerimage3"></div>
+                <div>{{ player3AFFORD['MID'][0].name }}</div>
+                <div>Predicted Points: <span class="ptstext">{{ player3AFFORD['MID'][0].predicted_points }}</span></div>
+                <div class="grappy">Cost: <span class="dunnotext">{{ player3AFFORD['MID'][0].cost }}</span></div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="FPLplayerWrapper3">
+        <div class="FPLplayer15">
+            <div class="column">
+                <div>
+                    <img src="{{ url_for('static', filename='img/kits/nah2.png') }}" alt="Player Image" class="small-image2">
+                </div>
+                <div>{{ fwd.name }}</div>
+                <div>Predicted Points: <span class="ptstext">{{ fwd.predicted_points }}</span></div>
+                <div>Cost: <span class="dunnotext">{{ fwd.cost }}</span></div>
+            </div>
+            <div class="column">
+                <img src="../static/img/switcharrows2.png" alt="Value Image" class="isthatasmallerimage">
+                <div class="bankern">with your $<span class="dunnotext">{{ bank }}</span>, you can get...</div>
+            </div>
+            <div class="column gridda">
+                {% if player3AFFORD['FWD']|length > 0 %}
+                <div><img src="../static/img/AIkit2.png" alt="Value Image" class="isthatasmallerimage3"></div>
+                <div>{{ player3AFFORD['FWD'][0].name }}</div>
+                <div>Predicted Points: <span class="ptstext">{{ player3AFFORD['FWD'][0].predicted_points }}</span></div>
+                <div class="grappy">Cost: <span class="dunnotext">{{ player3AFFORD['FWD'][0].cost }}</span></div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div
+    <div class="FPLplayer16trans">
+        <img src="{{ url_for('static', filename='img/predictedGS.png') }}" alt="Player Image" class="isthatasmallerimage2">
+    </div>
+    <div class="FPLplayer163222">
+        <img src="../static/img/topscorerz3.png" alt="Value Image" class="premiumscaler4">
+    </div>
+    <div class="endsection">
+        <div><span class="pink-text3">[</span> You have reached the <span class="pink-text3">end</span> of this section <span class="pink-text3">]</span></div>
+    </div>
+
+
+<script type="text/javascript">
+    var rankDifferences = {{ rank_differences|tojson }};
+    var rankStyles = {{ CSSrank_styles|tojson }};
+    var percentages = {{ percentages|tojson }};
+
+    function updateRankData(rank) {
+        const totherankDiv = document.getElementById('totherank');
+        const totherankdescDiv = document.getElementById('totherankdesc');
+        const percentageChanceDiv = document.getElementById('percentageChance');
+
+        totherankDiv.className = `totherank ${rankStyles[rank]}`;
+        const pointsOff = rankDifferences[rank] !== undefined ? rankDifferences[rank] : "N/A";
+        totherankdescDiv.innerHTML = `You are ${pointsOff} points off ${rank !== '1' ? rank : "the top rank"}.`;
+
+        const rankKey = rank === '1' ? '10' : rank.replace('k', '000').replace('m', '000000');
+        const chance = percentages[rankKey] !== undefined ? percentages[rankKey] : "N/A";
+        percentageChanceDiv.innerHTML = `${chance}% chance for this rank.`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        updateRankData('1m');
+        document.querySelector('.button68').addEventListener('click', function() {
+            window.scrollBy({
+                top: 690, 
+                left: 0, 
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+
+
+
+{% endblock %}

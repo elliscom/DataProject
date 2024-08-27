@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+
+{% block title %}KOTGW{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='KOTGW.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="purple-box">
+        <span>Your CLUB.</span>
+    </div>
+    <div class="FPLplayerWrapper3">
+        <div class="FPLplayer3">
+                video
+         </div>
+    </div>
+    <div class="white-box">
+        <div class="leftcontent">
+            <div></div>
+            <div class="teamcontent">
+                <img src="{{ url_for('static', filename='img/kits/' ~ favteamDETAILS2.favteam ~ '.png') }}" alt="Team Badge" class="scaledbadge">
+                <div>
+                    <div class="teamtext1">Your <span class="teamtext3">CLUB</span>.</div>
+                    <div class="teamtext2">{{ favteamDETAILS2.name }}</div>
+                    <div class="teamtext33">vs {{ favteamDETAILS2.opponent_name }} <img src="{{ url_for('static', filename='img/kits/' ~ favteamDETAILS2.opponent_id ~ '.png') }}" alt="Team Badge" class="scaled2badge"></div>
+
+                </div>
+            </div>
+            <div></div>
+        </div>
+        <div class="rightcontent">
+            <div></div>
+            <div class="statscontent">
+                <div class="ranktitles">Overall Strength</div>
+                <div class="marginedrank">Rank <span class="colourrank">{{ favteamDETAILS2.overall_rank }}</span></div>
+                <div class="progbar 
+                    {% set strength = favteamDETAILS2.total_strength_overall %}
+                    {% if 1900 <= strength < 2000 %}
+                    progbar9
+                    {% elif 2000 <= strength < 2100 %}
+                    progbar8
+                    {% elif 2100 <= strength < 2200 %}
+                    progbar7
+                    {% elif 2200 <= strength < 2300 %}
+                    progbar6
+                    {% elif 2300 <= strength < 2400 %}
+                    progbar5
+                    {% elif 2400 <= strength < 2500 %}
+                    progbar4
+                    {% elif 2500 <= strength < 2600 %}
+                    progbar3
+                    {% elif 2600 <= strength < 2700 %}
+                    progbar2
+                    {% elif strength >= 2700 %}
+                    progbar1
+                    {% endif %}
+                "></div>
+                <div class="rankclassedit">{{ favteamDETAILS2.total_strength_overall }}</div>
+                <div class="ranktitles">Attacking Strength</div>
+                <div class="marginedrank">Rank <span class="colourrank">{{ favteamDETAILS2.attack_rank }}</span></div>
+                <div class="progbar 
+                    {% set attack = favteamDETAILS2.total_strength_attack %}
+                    {% if 1900 <= attack < 2000 %}
+                    progbar9
+                    {% elif 2000 <= attack < 2100 %}
+                    progbar8
+                    {% elif 2100 <= attack < 2200 %}
+                    progbar7
+                    {% elif 2200 <= attack < 2300 %}
+                    progbar6
+                    {% elif 2300 <= attack < 2400 %}
+                    progbar5
+                    {% elif 2400 <= attack < 2500 %}
+                    progbar4
+                    {% elif 2500 <= attack < 2600 %}
+                    progbar3
+                    {% elif 2600 <= attack < 2700 %}
+                    progbar2
+                    {% elif attack >= 2700 %}
+                    progbar1
+                    {% endif %}
+                "></div>
+                <div class="rankclassedit">{{ favteamDETAILS2.total_strength_attack }}</div>
+                <div class="ranktitles">Defensive Strength</div>
+                <div class="marginedrank">Rank <span class="colourrank">{{ favteamDETAILS2.defence_rank }}</span></div>
+                <div class="progbar 
+                    {% set defence = favteamDETAILS2.total_strength_defence %}
+                    {% if 1900 <= defence < 2000 %}
+                    progbar9
+                    {% elif 2000 <= defence < 2100 %}
+                    progbar8
+                    {% elif 2100 <= defence < 2200 %}
+                    progbar7
+                    {% elif 2200 <= defence < 2300 %}
+                    progbar6
+                    {% elif 2300 <= defence < 2400 %}
+                    progbar5
+                    {% elif 2400 <= defence < 2500 %}
+                    progbar4
+                    {% elif 2500 <= defence < 2600 %}
+                    progbar3
+                    {% elif 2600 <= defence < 2700 %}
+                    progbar2
+                    {% elif defence >= 2700 %}
+                    progbar1
+                    {% endif %}
+                "></div>
+                <div class="rankclassedit">{{ favteamDETAILS2.total_strength_defence }}</div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="FPLplayerWrapperIMG2">
+        <div class="predicted_teams2">
+            <div class="FPLteam">
+                {% for i in range(22) %}
+                    {% if i % 2 == 0 %}
+                        <div class="grid_item">
+                            <img src="{{ url_for('static', filename='img/kits/' ~ favteamDETAILS2.favteam ~ '.png') }}" alt="Team Badge">
+                        </div>
+                    {% else %}
+                        {% if players %}
+                            <div class="grid_item">
+                                <div class="grid_item_text">{{ players.pop(0).web_name if players else 'Empty' }}</div>
+                            </div>
+                        {% else %}
+                            <div class="grid_item">
+                                <div class="grid_item_text">Empty</div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="right_team">
+                <div><img src="../static/img/wagess.png" alt="VS" class="predscaler"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preddas">
+        <div class="insidepreddas">
+            <div><img src="../static/img/keyplayers.png" alt="VS" class="predscaler50"><span class="players5">{{ top3Players[0] }}, {{ top3Players[1] }}, {{ top3Players[2] }}.</span></div>
+        </div>
+    </div>
+    <div class="preddas">
+        <div class="insidepreddas">
+            <div><img src="../static/img/aiscorepred.png" alt="VS" class="predscaler50"><span class="players6">{{ favteamDETAILS2.name }} <span class="teamtext3"> {{ goalsforthefav1 }} </span> <i> vs </i> <span class="teamtext3"> {{ goalsfortheopps1 }} </span> {{ favteamDETAILS2.opponent_name }} </span></div>
+        </div>
+    </div>
+
+    <div class="boxxymerchant">
+        gapinit
+    </div>
+
+
+    </div>
+
+
+
+    {% endblock %}
+
+</div>
+

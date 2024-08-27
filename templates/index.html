@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FPL Player Fetcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="overall-rank">
+        <p>Overall Rank: {{ overall_rank }}
+            {% if rank_direction != 'No change' %}
+                <img src="{{ url_for('static', filename='img/' + rank_direction + '.png') }}" class="rank-image">
+            {% endif %}
+        </p>
+    </div>
+    
+    <div class="players-grid">
+        <div class="grid main-players">
+            {% for player in players[0:11] %}
+                <div class="player">{{ player }}</div>
+            {% endfor %}
+        </div>
+
+        <div class="grid bench-players">
+            {% for player in players[11:15] %}
+                <div class="player">{{ player }}</div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="pitch-image-container">
+        <img src="{{ url_for('static', filename='img/pitch.png') }}" alt="Pitch" class="pitch-image">
+    </div>
+</body>
+</html>
